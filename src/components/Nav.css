@@ -162,7 +162,6 @@
 @media(min-width: 600px) {
     .nav-container {
         padding: 1.5em 1.875em 1em 1.875em;
-
     }
 
     .nav-container.active {
@@ -225,5 +224,21 @@
     }
 }
 
+
+@media(min-width: 1300px) {
+    .nav-container .logo {
+        width: 6.5em;
+    }
+
+    .nav-container a {
+        font-size: 1.5rem;
+    }
+}
+
+@media(min-width: 1451px) {
+    .nav-container {
+        padding: 1.5em 9.375em 1em 9.375em;
+    }
+}
 
 /* MEDIA QUERIES END */

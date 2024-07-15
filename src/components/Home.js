@@ -25,7 +25,10 @@ import wave from "../images/wave-green.png"
 import waveGif from "../images/wave-anim.gif"
 import runwayVid from "../images/runway-vid.mp4"
 import Vimeo from '@vimeo/player'
-
+import axios from "axios"
+import { Helmet } from "react-helmet";
+import favicon from "../images/plain-logo.png"
+import ReactGa from "react-ga4"
 
 
 // Import Swiper React components
@@ -57,6 +60,8 @@ const Home = () => {
     })
 
 
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
     // USEEFFECTS
 
@@ -70,7 +75,10 @@ const Home = () => {
         let charIndex = 0;
         let isDeleting = false;
 
+        let i = 0
+
         const typeEffect = () => {
+
             const currentWord = words[wordIndex];
             const currentChar = currentWord.substring(0, charIndex);
             dynamicText.textContent = currentChar;
@@ -84,17 +92,59 @@ const Home = () => {
                 // If condition is true, remove the previous character
                 charIndex--;
                 setTimeout(typeEffect, 100);
-            } else {
+            } else if (isDeleting && charIndex == 0) {
                 // If word is deleted then switch to the next word
+                i++
                 isDeleting = !isDeleting;
                 dynamicText.classList.remove("stop-blinking");
+
+                dynamicText.textContent = '|';
+
+                // setTimeout(() => {
+                //     dynamicText.textContent = '';
+                // }, 1200);
+
+
                 wordIndex = !isDeleting ? (wordIndex + 1) % words.length : wordIndex;
-                setTimeout(typeEffect, 1200);
+                setTimeout(() => {
+                    typeEffect()
+                }, 1200);
+
+            } else {
+                // If word is deleted then switch to the next word
+                i++
+                isDeleting = !isDeleting;
+                dynamicText.classList.remove("stop-blinking");
+
+                wordIndex = !isDeleting ? (wordIndex + 1) % words.length : wordIndex;
+                setTimeout(() => {
+                    typeEffect()
+                }, 1200);
+
             }
+
+
+
         }
+
+
+
 
         typeEffect();
     }, [])
+
+
+
+    useEffect(() => {
+        const dynamicText = document.querySelector(".home-container .hero-section .hero-title .typewriter");
+
+        if (dynamicText.length == 0) {
+            console.log("It's empty")
+        }
+    }, [])
+
+
+
 
 
 
@@ -107,12 +157,13 @@ const Home = () => {
 
 
         player.on('play', () => {
-            console.log('Played the video');
 
-            
+            // ReactGa.event("play_vsl")
+
+
             player.requestFullscreen()
-            .then(res => console.log())
-            .catch(err => console.log())
+                .then(res => console.log())
+                .catch(err => console.log())
         });
 
 
@@ -120,6 +171,27 @@ const Home = () => {
 
 
     /////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+    // API TESTER
+
+    // useEffect(() => {
+
+    //     axios.post('http://localhost:8000/api/tester', { 'name': 'Mutiso Muathime' })
+    //         .then(res => {
+    //             console.log("Here's the returned response: ", res)
+    //         })
+    //         .catch(err => {
+    //             console.log("Here's the resulting error: ", err)
+    //         })
+
+    // }, [])
+
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -142,15 +214,13 @@ const Home = () => {
         let verticalPosition = elementRect.top - bodyRect.top
         let navHeight = navContainer.offsetHeight;
 
+        // ReactGa.event("cta_click")
+
         window.scrollTo(0, verticalPosition - navHeight)
     }
 
 
-    // OPEN VSL
 
-    const openVsl = () => {
-        console.log("We are opening the VSL container")
-    }
 
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -164,6 +234,12 @@ const Home = () => {
     return (
         <ThemeProvider theme={theme}>
             <div className='home-container'>
+
+                <Helmet>
+                    <title>Begryp</title>
+                    <link rel="icon" type="image/png" sizes="16x16" href={favicon} />
+                </Helmet>
+
                 <Nav />
 
                 <section className="hero-section">
@@ -174,13 +250,13 @@ const Home = () => {
 
                         <div className="hero-left">
                             <div className="hero-left-top">
-                                <h1 className="hero-title appear-left">Empower your <span className='fashion-span'>Fashion</span> Brand With Cutting Edge <span class="typewriter">...</span> <span class="cursor">|</span></h1>
+                                <h1 className="hero-title appear-left">Empower your <span className='fashion-span'>Fashion</span> Brand With Cutting Edge <span class="typewriter">...</span> <span class="cursor"></span></h1>
                                 <p className="hero-p section-p appear-down">Unlock your brand's potential with our bespoke AI solutions. Our chatbots, automations, and workflows drive efficiency, slash costs, and supercharge profits.</p>
-                                <Button onClick={scrollSection} variant='contained' className='hero-btn appear-left' color='primary'>Claim&nbsp;<span>Free</span>&nbsp;AI Audit</Button>
+                                <Button onClick={scrollSection} variant='contained' className='hero-btn appear-left cta' color='primary'>Claim&nbsp;<span>Free</span>&nbsp;AI Audit</Button>
                             </div>
 
-                            <div className="hero-left-vsl" onClick={openVsl}>
-                                <iframe src="https://player.vimeo.com/video/915045001?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%' }} title="Chatbot Offer 2"></iframe>
+                            <div className="hero-left-vsl">
+                                <iframe src="https://player.vimeo.com/video/915045001?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%' }} title="Growing Your Fashion Business"></iframe>
 
 
                                 <div className="overlay" style={{ display: 'none' }}>
@@ -215,9 +291,9 @@ const Home = () => {
                     <div className="solution-right">
                         <h1 className="section-title appear-left"><span>Supercharge</span> Your Growth</h1>
 
-                        <p className="section-p appear-right">Beryp unlocks a whole new level of growth, for your fashion brand. Our chatbots and automated workflows provide personalized shopping experiences at scale, real time customer engagement, and cut on redundant tasks, to boost efficiency.</p>
+                        <p className="section-p appear-right">Begryp unlocks a whole new level of growth, for your fashion brand. Our chatbots and automated workflows provide personalized shopping experiences at scale, real time customer engagement, and cut on redundant tasks, to boost efficiency.</p>
 
-                        <Button onClick={scrollSection} variant='outlined' className='sol-btn appear-up'>Claim&nbsp;<span>Free</span>&nbsp;AI Audit</Button>
+                        <Button onClick={scrollSection} variant='outlined' className='sol-btn appear-up cta'>Claim&nbsp;<span>Free</span>&nbsp;AI Audit</Button>
                     </div>
                 </section>
 
@@ -291,32 +367,32 @@ const Home = () => {
                         <ParallaxLayer offset={0} speed={0.5}>
                             <div className="benefits-content">
                                 <h1 className="section-title">Increased Conversion Rates</h1>
-                                <p className="section-p">By ensuring real time engagement with your customers via the chatbot, your brand increases the likelihood they end up buying. This is because the chatbot guides them through out the buying journey, up to checkout, in addition to recommending items they adore.</p>
-                                <Button onClick={scrollSection} variant='contained' className='benefits-btn' color='secondary'>Claim&nbsp;<span>Free</span>&nbsp;AI Audit</Button>
+                                <p className="section-p">We build AI agents that guide your online shoppers, through out the buying journey, without any intervention from your team. Our chatbots provide real time customer support to user queries, personalised outfit recommendations, and address any concerns or friction that may hinder them from purchasing. All this and many more, will substantially boost your conversion rates.</p>
+                                <Button onClick={scrollSection} variant='contained' className='benefits-btn cta' color='secondary'>Claim&nbsp;<span>Free</span>&nbsp;AI Audit</Button>
                             </div>
                         </ParallaxLayer>
 
                         <ParallaxLayer offset={1} speed={1}>
                             <div className="benefits-content">
                                 <h1 className="section-title">Increased AOV</h1>
-                                <p className="section-p">By ensuring real time engagement with your customers via the chatbot, your brand increases the likelihood they end up buying. This is because the chatbot guides them through out the buying journey, up to checkout, in addition to recommending items they adore.</p>
-                                <Button onClick={scrollSection} variant='contained' className='benefits-btn' color='secondary'>Claim&nbsp;<span>Free</span>&nbsp;AI Audit</Button>
+                                <p className="section-p">Unlock High Average Order Values. Our sophisticated AI Agents provide an interface for your shoppers to build entire outfits, add the outfits to cart, or purchase there and then. Customers no longer buy standalone items, but rather entire outfits. With AI, we can tailor personalized offers for each shopper, incentivizing them to buy more upfront, in addition to automating upsells, to customers who complete their purchase.</p>
+                                <Button onClick={scrollSection} variant='contained' className='benefits-btn cta' color='secondary'>Claim&nbsp;<span>Free</span>&nbsp;AI Audit</Button>
                             </div>
                         </ParallaxLayer>
 
                         <ParallaxLayer offset={2} speed={0.1}>
                             <div className="benefits-content">
-                                <h1 className="section-title">Enhanced Brand Loyalty</h1>
-                                <p className="section-p">By ensuring real time engagement with your customers via the chatbot, your brand increases the likelihood they end up buying. This is because the chatbot guides them through out the buying journey, up to checkout, in addition to recommending items they adore.</p>
-                                <Button onClick={scrollSection} variant='contained' className='benefits-btn' color='secondary'>Claim&nbsp;<span>Free</span>&nbsp;AI Audit</Button>
+                                <h1 className="section-title">Smooth Operations</h1>
+                                <p className="section-p">By automating most of the processes involved in running your brand, we make things easy for your team. You can therefore scale your brand, taking in as many clients as you can, knowing the backend operations are running on autopilot.</p>
+                                <Button onClick={scrollSection} variant='contained' className='benefits-btn cta' color='secondary'>Claim&nbsp;<span>Free</span>&nbsp;AI Audit</Button>
                             </div>
                         </ParallaxLayer>
 
                         <ParallaxLayer offset={3} speed={0.5} factor={2}>
                             <div className="benefits-content">
-                                <h1 className="section-title">Smooth Operations</h1>
-                                <p className="section-p">By ensuring real time engagement with your customers via the chatbot, your brand increases the likelihood they end up buying. This is because the chatbot guides them through out the buying journey, up to checkout, in addition to recommending items they adore.</p>
-                                <Button onClick={scrollSection} variant='contained' className='benefits-btn' color='secondary'>Claim&nbsp;<span>Free</span>&nbsp;AI Audit</Button>
+                                <h1 className="section-title">Enhanced Brand Loyalty</h1>
+                                <p className="section-p">Its never been so critical to foster loyalty within your customers. Now than ever before, customers have so many options to whatever it is you sell. Being there for them whenever they have a concern or query, and personlising their shopping experience, will do a great deal, to having them coming back for more, from your brand, and nowhere else.</p>
+                                <Button onClick={scrollSection} variant='contained' className='benefits-btn cta' color='secondary'>Claim&nbsp;<span>Free</span>&nbsp;AI Audit</Button>
                             </div>
                         </ParallaxLayer>
                     </Parallax>
@@ -351,20 +427,14 @@ const Home = () => {
                             </SwiperSlide>
                             <SwiperSlide>
                                 <div className="proof-div">
-                                    <p className="proof-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ipsum aut animi quis fugit voluptate.</p>
-                                    <p className="author-p">~ According to Zipdo</p>
+                                    <p className="proof-p">78% of consumers say that personally relevant content from brands increases their purchase intent</p>
+                                    <p className="author-p">~ According to Appetite Creative</p>
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
                                 <div className="proof-div">
-                                    <p className="proof-p">100% of fashion executives said deploying AI was a business imperative.</p>
-                                    <p className="author-p">~ According to Zipdo</p>
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className="proof-div">
-                                    <p className="proof-p">50% of fashion executives said deploying AI was a business imperative.</p>
-                                    <p className="author-p">~ According to Zipdo</p>
+                                    <p className="proof-p">The AI in Fashion industry is growing at a CAGR (Compounded Annual Growth Rate) of about 40%</p>
+                                    <p className="author-p">~ According to MarketsAndMarkets</p>
                                 </div>
                             </SwiperSlide>
                         </Swiper>
@@ -387,17 +457,17 @@ const Home = () => {
 
                 </section>
 
-                <section className="cta-section">
+                <section className="cta-section" >
 
                     <img src={waveGif} alt="" className='wave-gif' />
 
-                    <Button onClick={scrollSection} className='cta-btn appear-up' variant='outlined'>Claim&nbsp;<span>Free</span>&nbsp;AI Audit</Button>
+                    <Button onClick={scrollSection} className='cta-btn appear-up cta' variant='outlined'>Claim&nbsp;<span>Free</span>&nbsp;AI Audit</Button>
 
                     <div className="calendly-container appear-right">
-                        <InlineWidget url="https://calendly.com/mutisomuathime/ai-audit-call" />
+                        <InlineWidget url="https://calendly.com/begryp/ai-audit-call" />
                     </div>
 
-                    <p className="section-p disclaimer-p appear-left">** We are only take in five more clients for the month, so hurry and claim your free audit call today **</p>
+                    <p className="section-p disclaimer-p appear-left">** We are only taking in five more clients for the month, so hurry and claim your free audit call today **</p>
                 </section>
 
                 <section className="footer">
@@ -417,8 +487,8 @@ const Home = () => {
                         <img src={plainLogo} alt="" />
 
                         <div className="footer-right">
-                            <a className="footer-p">Terms of Service</a>
-                            <a className="footer-p">Privacy Policy</a>
+                            <a className="footer-p">All rights reserved. Powered by Begryp</a>
+                            {/* <a className="footer-p">Privacy Policy</a> */}
                         </div>
                     </div>
                 </section>

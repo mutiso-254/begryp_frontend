@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ReactGa from "react-ga4"
+
+// ReactGa.send({ hitType: "pageview", page: window.location.pathname, title: document.title });
+// ReactGa.initialize("G-8VR07K2HK6")
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

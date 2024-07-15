@@ -176,6 +176,8 @@ html {
     font-weight: 700;
     font-style: normal;
     color: var(--secondary);
+    display: block;
+    height: 1em;
 }
 
 .home-container .hero-section .hero-div .hero-right {
@@ -577,6 +579,7 @@ html {
     font-size: .75rem;
     font-weight: 700;
     border-radius: 0;
+    background: #ffffff;
 }
 
 .home-container .cta-section .cta-btn span {
@@ -2186,6 +2189,212 @@ html {
 
     .home-container .cta-section .wave-gif {
         top: -9.2em;
+    }
+
+    .home-container .footer img {
+        width: 6em;
+    }
+
+    .home-container .footer .footer-right .footer-p {
+        font-size: 1.5rem;
+    }
+}
+
+
+@media(min-width: 1400px) {
+    .home-container .hero-section .hero-title {
+        font-size: 4.5rem;
+        max-width: 87rem;
+    }
+
+    .home-container .hero-section .hero-div .hero-right img {
+        width: 40em;
+        transform: translateY(-5.9em) translateX(-10em);
+    }
+
+    .home-container .hero-section .hero-p {
+        font-size: 1.9rem;
+        line-height: 2.3rem;
+    }
+
+    .home-container .hero-section .hero-div .hero-left .hero-left-top .hero-btn {
+        font-size: 1.9rem;
+    }
+
+    .home-container .hero-section .hero-div .hero-left .hero-left-vsl {
+        height: 28em;
+        width: 42em;
+    }
+
+    .home-container .section-title {
+        font-size: 3.4rem;
+        line-height: 3.1rem;
+    }
+
+    .home-container .problem-section .problem-p {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        max-width: 59rem;
+    }
+
+    .home-container .solution-section .solution-right p {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        margin: 1.5rem 0;
+    }
+
+    .home-container .solution-section .solution-right .sol-btn {
+        font-size: 1.6rem;
+        width: 18em;
+    }
+
+    .home-container .solution-section .solution-left .solution-img {
+        width: 44em;
+        top: -25em;
+    }
+
+    .home-container .solution-section .solution-left .solution-mesh {
+        width: 55em;
+    }
+
+    .home-container .section-p {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+    }
+
+    .home-container .products-section {
+        padding: 0em 21vw;
+    }
+
+    .home-container .products-section .product .prod-img {
+        width: 16em;
+    }
+
+    .home-container .benefits-section {
+        margin-top: 14em;
+        height: 125vh;
+    }
+
+    .home-container .benefits-section .benefits-content .benefits-btn {
+        font-size: 1.6rem;
+    }
+
+    .home-container .benefits-section .inner-img {
+        width: 27em;
+    }
+
+    .home-container .benefits-section .benefits-img {
+        width: 27em;
+    }
+
+    .home-container .benefits-section .benefits-content {
+        width: 60%;
+    }
+
+    .home-container .social-proof-section .mesh-div .green-mesh {
+        width: 60em;
+    }
+
+    .home-container .social-proof-section .proof-left .proof-div .proof-p {
+        font-size: 2.2rem;
+        line-height: 2.2rem;
+    }
+
+    .home-container .social-proof-section .proof-left .proof-div .author-p {
+        font-size: 1.8rem;
+    }
+
+    .home-container .cta-section .cta-btn {
+        font-size: 1.6rem;
+        padding: 0.5rem 7rem;
+    }
+
+    .home-container .cta-section .disclaimer-p {
+        font-size: 1.9rem;
+    }
+    
+}
+
+
+@media(min-width: 1451px) {
+    .home-container .hero-section {
+        padding: 14em 0em 1em 9.375em;
+    }
+
+    .home-container .hero-section .hero-div .hero-left .hero-left-vsl {
+        transform: translateX(-10.5em);
+    }
+
+    .home-container .solution-section .solution-right p {
+        max-width: 42rem;
+    }
+
+    .home-container .social-proof-section {
+        padding: 2em 0 2em 9.375em;
+        gap: 2em;
+    }
+
+    .home-container .social-proof-section .mesh-div .proof-img {
+        top: 52%;
+        width: 15em;
+    }
+
+    .home-container .social-proof-section .proof-left {
+        width: 45%;
+    }
+
+    .home-container .footer {
+        padding: 2em 9.375em;
+    }
+
+    .home-container .footer img {
+        width: 7em;
+        left: 10em;
+        top: -0.9em;
+    }
+
+    .home-container .footer .waves-div .wave {
+        background-size: 1200px 200px;
+    }
+
+    @keyframes animate {
+        0% {
+            background-position-x: 0;
+        }
+    
+        100% {
+            background-position-x: 1200px;
+        }
+    }
+
+    @keyframes animate2 {
+        0% {
+            background-position-x: 0;
+        }
+    
+        100% {
+            background-position-x: 1200px;
+        }
+    }
+
+    @keyframes animate3 {
+        0% {
+            background-position-x: 0;
+        }
+    
+        100% {
+            background-position-x: 1200px;
+        }
+    }
+
+    @keyframes animate4 {
+        0% {
+            background-position-x: 0;
+        }
+    
+        100% {
+            background-position-x: 1200px;
+        }
     }
 }
 
