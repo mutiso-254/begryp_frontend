@@ -205,6 +205,322 @@ html {
     width: 1.4em;
 }
 
+.home-container .cta-btn:hover .call-icon {
+    transition: all 0.5s ease-in-out;
+    -webkit-animation: ring 4s ease-in-out infinite;
+    -webkit-transform-origin: 50% 4px;
+    -moz-animation: ring 4s ease-in-out infinite;
+    -moz-transform-origin: 50% 4px;
+    animation: ring 4s ease-in-out infinite;
+    transform-origin: 50% 4px;
+}
+
+
+/* Call Animation */
+
+
+@-webkit-keyframes ring {
+    0% {
+        -webkit-transform: rotateZ(0);
+    }
+
+    1% {
+        -webkit-transform: rotateZ(30deg);
+    }
+
+    3% {
+        -webkit-transform: rotateZ(-28deg);
+    }
+
+    5% {
+        -webkit-transform: rotateZ(34deg);
+    }
+
+    7% {
+        -webkit-transform: rotateZ(-32deg);
+    }
+
+    9% {
+        -webkit-transform: rotateZ(30deg);
+    }
+
+    11% {
+        -webkit-transform: rotateZ(-28deg);
+    }
+
+    13% {
+        -webkit-transform: rotateZ(26deg);
+    }
+
+    15% {
+        -webkit-transform: rotateZ(-24deg);
+    }
+
+    17% {
+        -webkit-transform: rotateZ(22deg);
+    }
+
+    19% {
+        -webkit-transform: rotateZ(-20deg);
+    }
+
+    21% {
+        -webkit-transform: rotateZ(18deg);
+    }
+
+    23% {
+        -webkit-transform: rotateZ(-16deg);
+    }
+
+    25% {
+        -webkit-transform: rotateZ(14deg);
+    }
+
+    27% {
+        -webkit-transform: rotateZ(-12deg);
+    }
+
+    29% {
+        -webkit-transform: rotateZ(10deg);
+    }
+
+    31% {
+        -webkit-transform: rotateZ(-8deg);
+    }
+
+    33% {
+        -webkit-transform: rotateZ(6deg);
+    }
+
+    35% {
+        -webkit-transform: rotateZ(-4deg);
+    }
+
+    37% {
+        -webkit-transform: rotateZ(2deg);
+    }
+
+    39% {
+        -webkit-transform: rotateZ(-1deg);
+    }
+
+    41% {
+        -webkit-transform: rotateZ(1deg);
+    }
+
+    43% {
+        -webkit-transform: rotateZ(0);
+    }
+
+    100% {
+        -webkit-transform: rotateZ(0);
+    }
+}
+
+@-moz-keyframes ring {
+    0% {
+        -moz-transform: rotate(0);
+    }
+
+    1% {
+        -moz-transform: rotate(30deg);
+    }
+
+    3% {
+        -moz-transform: rotate(-28deg);
+    }
+
+    5% {
+        -moz-transform: rotate(34deg);
+    }
+
+    7% {
+        -moz-transform: rotate(-32deg);
+    }
+
+    9% {
+        -moz-transform: rotate(30deg);
+    }
+
+    11% {
+        -moz-transform: rotate(-28deg);
+    }
+
+    13% {
+        -moz-transform: rotate(26deg);
+    }
+
+    15% {
+        -moz-transform: rotate(-24deg);
+    }
+
+    17% {
+        -moz-transform: rotate(22deg);
+    }
+
+    19% {
+        -moz-transform: rotate(-20deg);
+    }
+
+    21% {
+        -moz-transform: rotate(18deg);
+    }
+
+    23% {
+        -moz-transform: rotate(-16deg);
+    }
+
+    25% {
+        -moz-transform: rotate(14deg);
+    }
+
+    27% {
+        -moz-transform: rotate(-12deg);
+    }
+
+    29% {
+        -moz-transform: rotate(10deg);
+    }
+
+    31% {
+        -moz-transform: rotate(-8deg);
+    }
+
+    33% {
+        -moz-transform: rotate(6deg);
+    }
+
+    35% {
+        -moz-transform: rotate(-4deg);
+    }
+
+    37% {
+        -moz-transform: rotate(2deg);
+    }
+
+    39% {
+        -moz-transform: rotate(-1deg);
+    }
+
+    41% {
+        -moz-transform: rotate(1deg);
+    }
+
+    43% {
+        -moz-transform: rotate(0);
+    }
+
+    100% {
+        -moz-transform: rotate(0);
+    }
+}
+
+@keyframes ring {
+    0% {
+        transform: rotate(0);
+    }
+
+    1% {
+        transform: rotate(30deg);
+    }
+
+    3% {
+        transform: rotate(-28deg);
+    }
+
+    5% {
+        transform: rotate(34deg);
+    }
+
+    7% {
+        transform: rotate(-32deg);
+    }
+
+    9% {
+        transform: rotate(30deg);
+    }
+
+    11% {
+        transform: rotate(-28deg);
+    }
+
+    13% {
+        transform: rotate(26deg);
+    }
+
+    15% {
+        transform: rotate(-24deg);
+    }
+
+    17% {
+        transform: rotate(22deg);
+    }
+
+    19% {
+        transform: rotate(-20deg);
+    }
+
+    21% {
+        transform: rotate(18deg);
+    }
+
+    23% {
+        transform: rotate(-16deg);
+    }
+
+    25% {
+        transform: rotate(14deg);
+    }
+
+    27% {
+        transform: rotate(-12deg);
+    }
+
+    29% {
+        transform: rotate(10deg);
+    }
+
+    31% {
+        transform: rotate(-8deg);
+    }
+
+    33% {
+        transform: rotate(6deg);
+    }
+
+    35% {
+        transform: rotate(-4deg);
+    }
+
+    37% {
+        transform: rotate(2deg);
+    }
+
+    39% {
+        transform: rotate(-1deg);
+    }
+
+    41% {
+        transform: rotate(1deg);
+    }
+
+    43% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+
+
+/* Call Animation End */
+
+
+
+
+
 .home-container .section.services-section {
     padding: 0;
     position: relative;
@@ -234,7 +550,7 @@ html {
 .home-container .section.services-section .services-nav {
     position: relative;
     padding: 1em 0;
-
+    border-top: 0.1px solid var(--primary);
 }
 
 .home-container .section.services-section .services-nav::before {
@@ -304,9 +620,7 @@ html {
     display: none;
 }
 
-.home-container .section.about-section .about-wrapper {
-
-}
+.home-container .section.about-section .about-wrapper {}
 
 .home-container .section.about-section .about-wrapper .peeping-img {
     display: none;
@@ -360,6 +674,10 @@ html {
     gap: 1em;
 }
 
+.home-container .section.contact-section .watermark-div {
+    display: none;
+}
+
 .home-container .section.contact-section .contact-left {
     display: flex;
     flex-direction: column;
@@ -372,9 +690,15 @@ html {
     flex-direction: column;
     align-items: center;
     gap: .5em;
+    position: relative;
+    z-index: 1;
 }
 
 .home-container .section.contact-section .contact-right form input {
+    font-family: "Hubballi", sans-serif;
+}
+
+.home-container .section.contact-section .contact-right form textarea {
     font-family: "Hubballi", sans-serif;
 }
 
@@ -395,6 +719,7 @@ html {
     text-transform: capitalize;
     border-radius: 0;
     width: 100%;
+    transition: all .5s ease-in-out;
 }
 
 .home-container .section.contact-section .contact-right form .send-btn .message-span {
@@ -403,6 +728,11 @@ html {
 
 .home-container .section.contact-section .contact-right form .send-btn .send-icon {
     width: 1em;
+    transition: all .5s ease-in-out;
+}
+
+.home-container .section.contact-section .contact-right form .send-btn:hover .send-icon {
+    transform: translateX(.3em) scale(1.2);
 }
 
 .home-container .section.footer-section {
@@ -467,4 +797,1677 @@ html {
 
 .home-container .section.footer-section .footer-right .terms-div a {
     font-size: .8rem;
+}
+
+
+@media(min-width: 400px) {
+    .home-container .section.hero-section {
+        padding: 9em 1.5em 3em 1.5em;
+    }
+
+    .home-container .section.services-section .services-container {
+        padding: 1.5em;
+        gap: 1.5em;
+    }
+
+    .home-container .section.about-section .about-wrapper .about-container {
+        padding: 2.5em 1.5em;
+    }
+
+    .home-container .section.cta-section {
+        padding: 3em 1.5em 1em 1.5em;
+    }
+
+    .home-container .section.cta-section .calendly-container {
+        width: 100%;
+        transform: translateX(0);
+    }
+    
+
+    .home-container .section.contact-section {
+        padding: 1.5em;
+    }
+
+    .home-container .section.footer-section {
+        padding: 1em 1.5em;
+    }
+}
+
+@media(min-width: 450px) {
+
+    .home-container .section.hero-section {
+        padding: 8em 1.5em 4em 1.5em;
+    }
+
+    .home-container .section.hero-section .hero-watermark {
+        width: 20em;
+        top: 1em;
+    }
+
+    .home-container .section.hero-section .hero-growth,
+    .home-container .section.hero-section .hero-phone {
+        display: unset;
+        position: absolute;
+        width: 3em;
+    }
+
+    .home-container .section.hero-section .hero-growth {
+        left: 0;
+        top: 3em;
+        width: 7em;
+    }
+
+    .home-container .section.hero-section .hero-phone {
+        right: -1em;
+        top: -1em;
+        width: 5em;
+    }
+
+
+    /* HERO ANIMATIONS */
+
+    .home-container .section.hero-section .hero-growth #head1 {
+        animation: head1-anim .8s infinite alternate;
+        transform-origin: bottom;
+        transform-box: fill-box;
+    }
+
+    @keyframes head1-anim {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(25deg);
+        }
+    }
+
+
+    .home-container .section.hero-section .hero-growth #arm1 {
+        animation: arm1-anim .8s infinite alternate 1s;
+        transform-origin: top left;
+        transform-box: fill-box;
+    }
+
+    @keyframes arm1-anim {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(-30deg);
+        }
+    }
+
+
+    .home-container .section.hero-section .hero-growth #leg1 {
+        animation: leg1-anim .8s infinite alternate 1s;
+        transform-origin: top right;
+        transform-box: fill-box;
+    }
+
+    @keyframes leg1-anim {
+        from {
+            transform: rotate(0)3
+        }
+
+        to {
+            transform: rotate(3deg);
+        }
+    }
+
+
+    .home-container .section.hero-section .hero-growth #leaf1 {
+        animation: leaf1-anim .5s infinite alternate 1s;
+        transform-origin: bottom left;
+        transform-box: fill-box;
+    }
+
+    @keyframes leaf1-anim {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(15deg);
+        }
+    }
+
+
+    .home-container .section.hero-section .hero-growth #rect2 {
+        animation: rect2-anim 1s infinite alternate 1s;
+        transform-origin: bottom;
+        transform-box: fill-box;
+    }
+
+    @keyframes rect2-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(1.3);
+        }
+    }
+
+
+    .home-container .section.hero-section .hero-growth #rect3 {
+        animation: rect3-anim 1s infinite alternate 1.3s;
+        transform-origin: bottom;
+        transform-box: fill-box;
+    }
+
+    @keyframes rect3-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(1.2);
+        }
+    }
+
+
+    .home-container .section.hero-section .hero-growth #rect4 {
+        animation: rect4-anim 1s infinite alternate 1.6s;
+        transform-origin: bottom;
+        transform-box: fill-box;
+    }
+
+    @keyframes rect4-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(1.2);
+        }
+    }
+
+
+    .home-container .section.hero-section .hero-phone #tick-circle {
+        animation: tick-circle-anim 1s infinite alternate 1.6s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes tick-circle-anim {
+        from {
+            transform: scale(1);
+        }
+
+        to {
+            transform: scale(1.2);
+        }
+    }
+
+
+    .home-container .section.hero-section .hero-phone #hero-phone-line1 {
+        animation: hero-phone-line1-anim 1s infinite alternate 1s;
+        transform-origin: left;
+        transform-box: fill-box;
+    }
+
+    @keyframes hero-phone-line1-anim {
+        from {
+            transform: scaleX(.7);
+        }
+
+        to {
+            transform: scaleX(1.3);
+        }
+    }
+
+
+    .home-container .section.hero-section .hero-phone #hero-phone-line2 {
+        animation: hero-phone-line2-anim 1s infinite alternate 1.3s;
+        transform-origin: left;
+        transform-box: fill-box;
+    }
+
+    @keyframes hero-phone-line2-anim {
+        from {
+            transform: scaleX(.7);
+        }
+
+        to {
+            transform: scaleX(1.3);
+        }
+    }
+
+    .home-container .section.hero-section .hero-phone #hero-phone-line3 {
+        animation: hero-phone-line3-anim 1s infinite alternate 1.6s;
+        transform-origin: left;
+        transform-box: fill-box;
+    }
+
+    @keyframes hero-phone-line3-anim {
+        from {
+            transform: scaleX(.7);
+        }
+
+        to {
+            transform: scaleX(1.3);
+        }
+    }
+
+
+    .home-container .section.hero-section .hero-phone #head2 {
+        animation: head2-anim .8s infinite alternate;
+        transform-origin: bottom;
+        transform-box: fill-box;
+    }
+
+    @keyframes head2-anim {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(-15deg);
+        }
+    }
+
+
+
+
+    /* HERO ANIMATIONS END */
+
+
+
+
+
+    .home-container .section.hero-section .hero-content .hero-title {
+        max-width: 17rem;
+    }
+
+    .home-container .section.hero-section .hero-content .hero-p {
+        max-width: 16rem;
+    }
+
+    .home-container .section.services-section .services-nav::before {
+        width: 7em;
+    }
+
+    .home-container .section.services-section .services-nav::after {
+        width: 7em;
+    }
+
+}
+
+
+
+@media(min-width: 500px) {
+    .home-container .section.hero-section .hero-content .hero-title {
+        max-width: 21rem;
+        font-size: 1.8rem;
+        line-height: 1.8rem;
+    }
+
+    .home-container .section.hero-section .hero-content .hero-title .hero-title-span {
+        font-size: 2.3rem;
+    }
+
+    .home-container .section-title {
+        font-size: 1.6rem;
+    }
+
+    .home-container .section-p {
+        font-size: .9rem;
+        line-height: 1.2rem;
+    }
+
+    .home-container .section.hero-section {
+        padding: 9em 1.5em 4em 1.5em;
+    }
+
+    .home-container .section.services-section .services-nav::before {
+        width: 6em;
+    }
+
+    .home-container .section.services-section .services-nav::after {
+        width: 6em;
+    }
+
+    .home-container .section.services-section .services-nav .services-nav-ul {
+        display: flex;
+        list-style-type: none;
+        justify-content: space-between;
+        padding: 1em 1.5em 0.5em 1.5em;
+        position: relative;
+        z-index: 2;
+    }
+
+    .home-container .section.services-section .services-nav .services-nav-ul li {
+        cursor: pointer;
+        position: relative;
+    }
+
+    .home-container .section.services-section .services-nav .services-nav-ul li::after {
+        content: '';
+        display: block;
+        height: 0.1em;
+        background: var(--primary);
+        width: 0;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .home-container .section.services-section .services-nav .services-nav-ul li:hover::after {
+        width: 100%;
+    }
+
+    .home-container .section.services-section .services-nav .services-nav-ul li span {
+        font-family: "Anonymous Pro", monospace;
+        font-size: .8rem;
+    }
+
+    .home-container .section.services-section .services-container {
+        gap: 4em;
+    }
+
+    .home-container .section.services-section .services-container .service {
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 100%;
+    }
+
+    .home-container .section.services-section .services-container .service.service1 .service-content {
+        align-items: start;
+    }
+
+    .home-container .section.services-section .services-container .service.service1 .service-content .service-title {
+        text-align: left;
+    }
+
+    .home-container .section.services-section .services-container .service.service1 .service-content .section-p {
+        text-align: left;
+        max-width: 65%;
+    }
+
+    .home-container .section.services-section .services-container .service.service1 .service-right svg {
+        display: unset;
+        width: 10em;
+        position: absolute;
+        right: -4%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-content {
+        align-items: end;
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-content .service-title {
+        text-align: right;
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-content .section-p {
+        text-align: right;
+        max-width: 60%;
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg {
+        display: unset;
+        position: absolute;
+        width: 5em;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 10%;
+    }
+
+    .home-container .section.services-section .services-container .service.service3 .service-content {
+        align-items: start;
+    }
+
+    .home-container .section.services-section .services-container .service.service3 .service-content .service-title {
+        text-align: left;
+    }
+
+    .home-container .section.services-section .services-container .service.service3 .service-content .section-p {
+        text-align: left;
+        max-width: 65%;
+    }
+
+    .home-container .section.services-section .services-container .service.service3 .service-right svg {
+        display: unset;
+        width: 9em;
+        position: absolute;
+        right: 0%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+
+    /* SERVICE ANIMATIONS */
+
+    .home-container .section.services-section .services-container .service.service1 .service-right svg #robot-eye {
+        animation: robot-eye-anim 1.5s infinite alternate;
+        /* transform-origin: left;
+        transform-box: fill-box; */
+    }
+
+    @keyframes robot-eye-anim {
+        from {
+            fill: #3F3D56;
+        }
+
+        to {
+            fill: var(--primary);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-green-line {
+        animation: phone-green-line-anim 2s infinite alternate;
+    }
+
+    @keyframes phone-green-line-anim {
+        from {
+            transform: translateX(-10em);
+        }
+
+        to {
+            transform: translateX(6em);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line1 {
+        animation: phone-line1-anim 1s infinite alternate;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line1-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line2 {
+        animation: phone-line2-anim 1s infinite alternate 1s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line2-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line3 {
+        animation: phone-line3-anim 1s infinite alternate 1s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line3-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line4 {
+        animation: phone-line4-anim 1s infinite alternate 1s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line4-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line5 {
+        animation: phone-line5-anim 1s infinite alternate 1s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line5-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line6 {
+        animation: phone-line6-anim 1s infinite alternate 1s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line6-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line7 {
+        animation: phone-line7-anim 1s infinite alternate 1s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line7-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line8 {
+        animation: phone-line8-anim 1s infinite alternate 1s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line8-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line9 {
+        animation: phone-line9-anim 1s infinite alternate 1s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line9-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line10 {
+        animation: phone-line10-anim 1s infinite alternate 1.5s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line10-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line11 {
+        animation: phone-line11-anim 1s infinite alternate 1.5s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line11-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line12 {
+        animation: phone-line12-anim 1s infinite alternate 1.5s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line12-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line13 {
+        animation: phone-line13-anim 1s infinite alternate 1.5s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line13-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line14 {
+        animation: phone-line14-anim 1s infinite alternate 1.5s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line14-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line15 {
+        animation: phone-line15-anim 1s infinite alternate 1.5s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line15-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line16 {
+        animation: phone-line16-anim 1s infinite alternate 1.5s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line16-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line17 {
+        animation: phone-line17-anim 1s infinite alternate 1.5s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line17-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line18 {
+        animation: phone-line18-anim 1s infinite alternate 1.5s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line18-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line19 {
+        animation: phone-line19-anim 1s infinite alternate 1.5s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line19-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line20 {
+        animation: phone-line20-anim 1s infinite alternate 1.5s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line20-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line21 {
+        animation: phone-line21-anim 1s infinite alternate .5s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line21-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line22 {
+        animation: phone-line22-anim 1s infinite alternate .5s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line22-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line23 {
+        animation: phone-line23-anim 1s infinite alternate .5s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line23-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line24 {
+        animation: phone-line24-anim 1s infinite alternate .5s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line24-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line25 {
+        animation: phone-line25-anim 1s infinite alternate .5s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line25-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line26 {
+        animation: phone-line26-anim 1s infinite alternate .5s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line26-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line27 {
+        animation: phone-line27-anim 1s infinite alternate .5s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line27-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line28 {
+        animation: phone-line28-anim 1s infinite alternate .5s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line28-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line29 {
+        animation: phone-line29-anim 1s infinite alternate .5s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line29-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line30 {
+        animation: phone-line30-anim 1s infinite alternate .5s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line30-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line31 {
+        animation: phone-line31-anim 1s infinite alternate 1s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line31-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line32 {
+        animation: phone-line32-anim 1s infinite alternate 1s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line32-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line33 {
+        animation: phone-line33-anim 1s infinite alternate 1s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line33-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line34 {
+        animation: phone-line34-anim 1s infinite alternate 1s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line34-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line35 {
+        animation: phone-line35-anim 1s infinite alternate 1s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line35-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line36 {
+        animation: phone-line36-anim 1s infinite alternate 1s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line36-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line37 {
+        animation: phone-line37-anim 1s infinite alternate 1s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line37-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line38 {
+        animation: phone-line38-anim 1s infinite alternate 1s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line38-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line39 {
+        animation: phone-line39-anim 1s infinite alternate 1s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line39-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-line40 {
+        animation: phone-line40-anim 1s infinite alternate 1s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes phone-line40-anim {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(2);
+        }
+    }
+
+
+
+    /*  */
+
+    .home-container .section.services-section .services-container .service.service3 .service-right svg #task-circle1 {
+        animation: task-circle1-anim 1s infinite alternate 1s;
+    }
+
+    @keyframes task-circle1-anim {
+        from {
+            fill: var(--primary);
+        }
+
+        to {
+            fill: #CCCCCC;
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service3 .service-right svg #task-circle2 {
+        animation: task-circle2-anim 1s infinite alternate 1.5s;
+    }
+
+    @keyframes task-circle2-anim {
+        from {
+            fill: var(--primary);
+        }
+
+        to {
+            fill: #CCCCCC;
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service3 .service-right svg #task-circle3 {
+        animation: task-circle3-anim 1s infinite alternate 2s;
+    }
+
+    @keyframes task-circle3-anim {
+        from {
+            fill: var(--primary);
+        }
+
+        to {
+            fill: #CCCCCC;
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service3 .service-right svg #head3 {
+        animation: head3-anim .8s infinite alternate;
+        transform-origin: bottom;
+        transform-box: fill-box;
+    }
+
+    @keyframes head3-anim {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(15deg);
+        }
+    }
+
+
+
+
+
+
+    /* SERVICE ANIMATIONS END */
+
+
+
+
+
+
+
+
+
+    .home-container .section.about-section {
+        margin-top: 1em;
+        padding: 0 1.5em;
+    }
+
+    .home-container .section.about-section .about-wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    .home-container .section.about-section .about-wrapper .about-container {
+        border-radius: 1em 1em 0 0;
+        transform: translateX(-0.625em);
+        padding: 2.5em;
+
+    }
+
+    .home-container .section.about-section .about-wrapper .about-container .about-content {
+        align-items: start;
+        gap: .7em;
+    }
+
+    .home-container .section.about-section .about-wrapper .about-container .about-content .section-title {
+        text-align: left;
+    }
+
+    .home-container .section.about-section .about-wrapper .about-container .about-content .section-p {
+        text-align: left;
+    }
+
+    .home-container .section.about-section .about-wrapper .peeping-img {
+        display: unset;
+        width: 6.5em;
+        position: relative;
+        z-index: 2;
+    }
+
+    .home-container .section.about-section .about-wrapper .about-container .overlay {
+        border-radius: 1em 1em 0 0;
+    }
+
+    .home-container .section.about-section .about-wrapper .about-container .overlay .curvy-abstract.curvy-abstract1 {
+        border-radius: 1em 0 0 0;
+    }
+
+    .home-container .section.about-section .about-wrapper .about-container .overlay .curvy-abstract.curvy-abstract2 {
+        border-radius: 0 1em 0 0;
+    }
+
+    .home-container .section.about-section .doodles .doodle {
+        display: unset;
+    }
+
+    .home-container .section.about-section .doodles .doodle.doodle1-left {
+        width: 5em;
+        left: 0;
+    }
+
+    .home-container .section.about-section .doodles .doodle.doodle2-left {
+        width: 5em;
+        left: 0;
+        top: 40%;
+    }
+
+    .home-container .section.about-section .doodles .doodle.doodle3-left {
+        width: 5em;
+        left: 3em;
+        top: 72%;
+    }
+
+    .home-container .section.about-section .doodles .doodle.doodle1-right {
+        width: 5em;
+        right: -1em;
+    }
+
+    .home-container .section.about-section .doodles .doodle.doodle2-right {
+        width: 5em;
+        right: -1em;
+        top: 36%;
+    }
+
+    .home-container .section.about-section .doodles .doodle.doodle3-right {
+        width: 5em;
+        right: -1em;
+        top: 72%;
+    }
+
+    .home-container .section.contact-section {
+        flex-direction: row;
+    }
+
+    .home-container .section.contact-section .contact-right {
+        width: 55%;
+    }
+
+    .home-container .section.contact-section .contact-left {
+        align-items: start;
+        width: 45%;
+
+    }
+
+    .home-container .section.contact-section .contact-left .section-title {
+        text-align: left;
+    }
+
+    .home-container .section.contact-section .contact-left .section-p {
+        text-align: left;
+    }
+
+    .home-container .section.contact-section .watermark-div {
+        display: unset;
+        position: relative;
+    }
+
+    .home-container .section.contact-section .watermark-div h1 {
+        position: absolute;
+        font-size: 3rem;
+        z-index: 0;
+        color: #0000004f;
+    }
+
+    .home-container .section.contact-section .watermark-div h1.ai {
+        top: -2.9rem;
+        font-size: 9rem;
+    }
+
+    .home-container .section.contact-section .watermark-div h1.auto {
+        top: 6rem;
+        font-size: 4.5rem;
+    }
+
+    .home-container .section.contact-section .watermark-div h1.mation {
+        top: 10rem;
+        font-size: 2.4rem;
+        left: 2rem;
+    }
+
+    .home-container .section.contact-section .watermark-div h1.tech {
+        top: 3rem;
+    }
+
+    .home-container .section.footer-section .footer-right .email-div span {
+        font-size: .9rem;
+    }
+
+    .home-container .section.footer-section .footer-right .terms-div a {
+        font-size: .9rem;
+    }
+
+
+}
+
+
+@media(min-width: 600px) {
+
+    .home-container .section.services-section .services-nav .services-nav-ul {
+        padding: 1em 1.875em 0.5em 1.875em;
+    }
+
+    .home-container .section.services-section .services-container {
+        padding: 1.5em 1.875em;
+    }
+
+    .home-container .section.about-section {
+        padding: 0 1.875em;
+    }
+
+    .home-container .section.cta-section {
+        padding: 3em 1.875em 1em 1.875em;
+    }
+
+    .home-container .section.contact-section {
+        padding: 1.5em 1.875em;
+    }
+
+    .home-container .section.footer-section {
+        padding: 1em 1.875em;
+    }
+
+    .home-container .section.footer-section .footer-left .footer-logo {
+        width: 4em;
+    }
+}
+
+@media(min-width: 650px) {
+
+    .home-container .section.hero-section {
+        padding: 9em 1.5em 5em 1.5em;
+    }
+
+    .home-container .section.hero-section .hero-content {
+        gap: .7em;
+    }
+
+    .home-container .section.hero-section .hero-content .hero-title {
+        max-width: 23rem;
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
+    .home-container .section.hero-section .hero-content .hero-title .hero-title-span {
+        font-size: 2.6rem;
+    }
+
+    .home-container .section.hero-section .hero-content .hero-p {
+        font-size: 1.1rem;
+    }
+
+    .home-container .cta-btn {
+        padding: 0.5em 2.5em;
+        font-size: 1rem;
+    }
+
+    .home-container .section.hero-section .hero-watermark {
+        width: 25em;
+        top: 0em;
+    }
+
+    .home-container .section.hero-section .hero-growth {
+        width: 9em;
+        left: 1em;
+    }
+
+    .home-container .section.hero-section .hero-phone {
+        right: 2em;
+        top: -1em;
+        width: 7em;
+    }
+
+    .home-container .section-title {
+        font-size: 1.8rem;
+    }
+
+    .home-container .section-p {
+        font-size: 1rem;
+        line-height: 1.4rem;
+    }
+
+    .home-container .section.services-section .services-nav .services-nav-ul li span {
+        font-size: .9rem;
+    }
+
+    .home-container .section.services-section .services-container {
+        padding: 1.8em 1.875em;
+    }
+
+    .home-container .section.services-section .services-container .service-title {
+        font-size: 1.5rem;
+    }
+
+    .home-container .section.services-section .services-container .service.service1 .service-right svg {
+        width: 12em;
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg {
+        width: 6em;
+    }
+
+    .home-container .section.services-section .services-container .service.service3 .service-right svg {
+        width: 10em;
+        right: 4%;
+    }
+
+    .home-container .section.services-section .services-watermark {
+        width: 28em;
+    }
+
+    .home-container .section.services-section .services-watermark.services-watermark2 {
+        top: 90%;
+        transform: translateY(-90%);
+    }
+    
+}
+
+@media(min-width: 700px) {
+    .home-container .section.about-section {
+        margin-top: 2em;
+    }
+
+    .home-container .section.services-section .services-container {
+        gap: 5em;
+    }
+
+    .home-container .section.services-section .services-container .service.service1 .service-right svg {
+        right: 1%;
+    }
+
+    .home-container .section.contact-section .watermark-div h1.ai {
+        top: -3rem;
+        font-size: 12rem;
+        left: 1.5rem;
+    }
+
+    .home-container .section.contact-section .watermark-div h1.auto {
+        top: 7rem;
+        font-size: 5rem;
+        left: 1.5rem;
+    }
+
+    .home-container .section.contact-section .watermark-div h1.mation {
+        top: 10rem;
+        font-size: 2.8rem;
+        left: 4rem;
+    }
+
+    .home-container .section.contact-section .watermark-div h1.tech {
+        top: 3rem;
+        font-size: 4.5rem;
+        left: 1.5rem;
+    }
+
+
+}
+
+@media(min-width: 750px) {
+    .home-container .section.contact-section .contact-left {
+        width: 50%;
+    }
+
+    .home-container .section.contact-section .contact-right {
+        width: 50%;
+    }
+
+    .home-container .section.contact-section .contact-right form .send-btn {
+        font-size: 1rem;
+        gap: 1rem;
+    }
+
+    .home-container .section.contact-section .contact-right form .send-btn .send-icon {
+        width: 1.1em;
+    }
+
+
+    .home-container .section.footer-section .footer-right {
+        gap: 1em;
+    }
+
+}
+
+
+@media(min-width: 800px) {
+
+    .home-container .section.hero-section {
+        padding: 10em 1.5em 6em 1.5em;
+    }
+
+    .home-container .section.hero-section .hero-watermark {
+        width: 28em;
+    }
+
+    .home-container .section.hero-section .hero-growth {
+        width: 11em;
+        left: 3em;
+        top: 5em;
+    }
+
+    .home-container .section.hero-section .hero-phone {
+        right: 4em;
+        top: 1em;
+        width: 8em;
+    }
+
+    .home-container .section.hero-section .hero-content .hero-title {
+        max-width: 27rem;
+        font-size: 2.4rem;
+        line-height: 2.4rem;
+    }
+
+    .home-container .section.hero-section .hero-content .hero-title .hero-title-span {
+        font-size: 3rem;
+    }
+
+    .home-container .section.hero-section .hero-content .hero-p {
+        font-size: 1.2rem;
+        max-width: 17rem;
+    }
+
+    .home-container .section-title {
+        font-size: 2.1rem;
+    }
+
+    .home-container .section-p {
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+    }
+
+    .home-container .section.services-section .services-nav {
+        padding: 1.5em 0 1em 0;
+    }
+
+    .home-container .section.services-section .services-nav .services-nav-ul {
+        padding: 1.5em 3.125em 0.8em 3.125em;
+    }
+
+    .home-container .section.services-section .services-nav .services-nav-ul li span {
+        font-size: 1rem;
+    }
+
+
+    .home-container .section.services-section .services-container {
+        padding: 2em 3.125em;
+    }
+
+    .home-container .section.services-section .services-container .service-content {
+        gap: .7em;
+    }
+
+    .home-container .section.services-section .services-container .service-title {
+        font-size: 1.7rem;
+    }
+
+    .home-container .section.about-section {
+        padding: 0 3.125em;
+    }
+
+    .home-container .section.about-section .about-wrapper .about-container {
+        padding: 3.5em;
+    }
+
+    .home-container .section.about-section .doodles .doodle {
+        width: 6em !important;
+    }
+
+    .home-container .section.cta-section {
+        padding: 3em 3.125em 1em 3.125em;
+    }
+
+    .home-container .section.contact-section {
+        padding: 1.5em 3.125em;
+    }
+
+    .home-container .section.contact-section .contact-left {
+        gap: .8em;
+    }
+
+    .home-container .section.contact-section .watermark-div h1.ai {
+        top: -6rem;
+        font-size: 16rem;
+        left: .5rem;
+    }
+
+    .home-container .section.contact-section .watermark-div h1.tech {
+        top: 2rem;
+        font-size: 5.5rem;
+        left: 2.5rem;
+    }
+
+    .home-container .section.contact-section .watermark-div h1.auto {
+        font-size: 6rem;
+    }
+
+    .home-container .section.contact-section .watermark-div h1.mation {
+        font-size: 3.8rem;
+    }
+
+    .home-container .section.footer-section {
+        padding: 1em 3.125em;
+    }
+
+    .home-container .section.footer-section .footer-right .email-div {
+        gap: 1em;
+    }
+
+    .home-container .section.footer-section .footer-right .email-div span {
+        font-size: 1.2rem;
+    }
+
+    .home-container .section.footer-section .footer-right .terms-div {
+        gap: 1.5em;
+    }
+
+    .home-container .section.footer-section .footer-right .terms-div a {
+        font-size: 1.2rem;
+    }
+
+    .home-container .section.footer-section .footer-right .email-div .email-icon {
+        width: 1.5em;
+    }
+
+    .home-container .section.footer-section .footer-left .footer-logo {
+        width: 5em;
+    }
 }

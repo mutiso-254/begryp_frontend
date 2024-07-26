@@ -257,6 +257,90 @@ const Nav = () => {
         let navHeight = navContainer.offsetHeight;
 
         window.scrollTo(0, verticalPosition - navHeight)
+
+        const ulDiv = document.querySelector('.nav-container .ul-div');
+        const ulDivContainer = document.querySelector('.nav-container .ul-div .ul-div-container');
+        const navUl = document.querySelector('.nav-container .ul-div .ul-div-container ul');
+        const burger = document.querySelector('.nav-container .top-nav .burger')
+
+
+        ulDiv.classList.remove('active-ul-div')
+        ulDivContainer.classList.remove('active-ul-div-container')
+        navUl.classList.remove('active-nav-ul')
+        burger.classList.remove('burger-toggle')
+
+    }
+
+    const scrollAbout = () => {
+        const aboutContainer = document.querySelector('.home-container .about-section')
+        const bodyRect = document.body.getBoundingClientRect()
+        const elementRect = aboutContainer.getBoundingClientRect()
+
+        const navContainer = document.querySelector('.nav-container')
+
+        let verticalPosition = elementRect.top - bodyRect.top
+        let navHeight = navContainer.offsetHeight;
+
+        window.scrollTo(0, verticalPosition - navHeight)
+
+        const ulDiv = document.querySelector('.nav-container .ul-div');
+        const ulDivContainer = document.querySelector('.nav-container .ul-div .ul-div-container');
+        const navUl = document.querySelector('.nav-container .ul-div .ul-div-container ul');
+        const burger = document.querySelector('.nav-container .top-nav .burger')
+
+
+        ulDiv.classList.remove('active-ul-div')
+        ulDivContainer.classList.remove('active-ul-div-container')
+        navUl.classList.remove('active-nav-ul')
+        burger.classList.remove('burger-toggle')
+    }
+
+    const scrollContact = () => {
+        const contactContainer = document.querySelector('.home-container .contact-section')
+        const bodyRect = document.body.getBoundingClientRect()
+        const elementRect = contactContainer.getBoundingClientRect()
+
+        const navContainer = document.querySelector('.nav-container')
+
+        let verticalPosition = elementRect.top - bodyRect.top
+        let navHeight = navContainer.offsetHeight;
+
+        window.scrollTo(0, verticalPosition - navHeight)
+
+        const ulDiv = document.querySelector('.nav-container .ul-div');
+        const ulDivContainer = document.querySelector('.nav-container .ul-div .ul-div-container');
+        const navUl = document.querySelector('.nav-container .ul-div .ul-div-container ul');
+        const burger = document.querySelector('.nav-container .top-nav .burger')
+
+
+        ulDiv.classList.remove('active-ul-div')
+        ulDivContainer.classList.remove('active-ul-div-container')
+        navUl.classList.remove('active-nav-ul')
+        burger.classList.remove('burger-toggle')
+    }
+    
+    const scrollServices = () => {
+        const servicesContainer = document.querySelector('.home-container .services-section')
+        const bodyRect = document.body.getBoundingClientRect()
+        const elementRect = servicesContainer.getBoundingClientRect()
+
+        const navContainer = document.querySelector('.nav-container')
+
+        let verticalPosition = elementRect.top - bodyRect.top
+        let navHeight = navContainer.offsetHeight;
+
+        window.scrollTo(0, verticalPosition - navHeight)
+
+        const ulDiv = document.querySelector('.nav-container .ul-div');
+        const ulDivContainer = document.querySelector('.nav-container .ul-div .ul-div-container');
+        const navUl = document.querySelector('.nav-container .ul-div .ul-div-container ul');
+        const burger = document.querySelector('.nav-container .top-nav .burger')
+
+
+        ulDiv.classList.remove('active-ul-div')
+        ulDivContainer.classList.remove('active-ul-div-container')
+        navUl.classList.remove('active-nav-ul')
+        burger.classList.remove('burger-toggle')
     }
 
 
@@ -267,15 +351,17 @@ const Nav = () => {
         <ThemeProvider theme={theme}>
             <nav className={activeNav ? 'nav-container active' : 'nav-container'}>
 
+                <div className="ribbon"></div>
+
 
                 <div className="top-nav">
                     <div className="logo-ul">
                         <a href=''><img src={logo} className="logo" alt="Begryp Logo" loading='lazy' /></a>
 
                         <ul className="top-nav-ul">
-                            <li><a className='major-a'>Services</a></li>
-                            <li><a className='major-a'>About</a></li>
-                            <li><a className='major-a'>Contact</a></li>
+                            <li onClick={scrollServices}><a className='major-a'>Services</a></li>
+                            <li onClick={scrollAbout}><a className='major-a'>About</a></li>
+                            <li onClick={scrollContact}><a className='major-a'>Contact</a></li>
                         </ul>
                     </div>
 
@@ -298,9 +384,9 @@ const Nav = () => {
                     <div className="ul-div">
                         <div className="ul-div-container">
                             <ul>
-                                <li><a className='major-a'>Services</a></li>
-                                <li><a className='major-a'>About</a></li>
-                                <li><a className='major-a'>Contact</a></li>
+                                <li onClick={scrollServices}><a className='major-a'>Services</a></li>
+                                <li onClick={scrollAbout}><a className='major-a'>About</a></li>
+                                <li onClick={scrollContact}><a className='major-a'>Contact</a></li>
                                 <li><Button variant='contained' color='primary' onClick={scrollSection} className='book-btn'>Book&nbsp;<span>A</span>&nbsp;Call</Button></li>
                             </ul>
                         </div>

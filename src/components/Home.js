@@ -290,6 +290,51 @@ const Home = () => {
     }
 
 
+    const scrollChat = () => {
+        const serviceContainer = document.querySelector('.home-container .services-section .services-container .service1')
+        console.log("Here's the service container: ",serviceContainer)
+        const bodyRect = document.body.getBoundingClientRect()
+        const elementRect = serviceContainer.getBoundingClientRect()
+
+        const navContainer = document.querySelector('.nav-container')
+
+        let verticalPosition = elementRect.top - bodyRect.top
+        let navHeight = navContainer.offsetHeight + 15;
+
+        window.scrollTo(0, verticalPosition - navHeight)
+    }
+
+    const scrollPhone = () => {
+        const serviceContainer = document.querySelector('.home-container .services-section .services-container .service2')
+        const bodyRect = document.body.getBoundingClientRect()
+        const elementRect = serviceContainer.getBoundingClientRect()
+
+        const navContainer = document.querySelector('.nav-container')
+
+        let verticalPosition = elementRect.top - bodyRect.top
+        let navHeight = navContainer.offsetHeight + 15;
+
+        window.scrollTo(0, verticalPosition - navHeight)
+    }
+
+    const scrollAutomations = () => {
+        const serviceContainer = document.querySelector('.home-container .services-section .services-container .service3')
+        const bodyRect = document.body.getBoundingClientRect()
+        const elementRect = serviceContainer.getBoundingClientRect()
+
+        const navContainer = document.querySelector('.nav-container')
+
+        let verticalPosition = elementRect.top - bodyRect.top
+        let navHeight = navContainer.offsetHeight + 15;
+
+        window.scrollTo(0, verticalPosition - navHeight)
+    }
+
+    
+
+
+
+
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -337,9 +382,9 @@ const Home = () => {
                             <path id="Vector" d="M332.63 606.19H139.51C111.42 606.19 88.5701 583.34 88.5701 555.25V50.94C88.5701 22.85 111.42 0 139.51 0H332.63C360.72 0 383.57 22.85 383.57 50.94V555.25C383.57 583.34 360.72 606.19 332.63 606.19Z" fill="#DADBDC" />
                             <path id="Vector_2" d="M332.77 592.4H139.37C118.58 592.4 101.66 575.48 101.66 554.69V50.51C101.66 29.72 118.58 12.8 139.37 12.8H332.77C353.56 12.8 370.48 29.72 370.48 50.51V554.69C370.48 575.48 353.56 592.4 332.77 592.4Z" fill="white" />
                             <path id="Vector_3" d="M263.42 46.36H208.73C201.51 46.36 195.64 40.49 195.64 33.27C195.64 26.05 201.51 20.18 208.73 20.18H263.42C270.64 20.18 276.51 26.05 276.51 33.27C276.51 40.49 270.64 46.36 263.42 46.36Z" fill="#DADBDC" />
-                            <path id="phone-line1" d="M319.23 200.32H159.2C156.03 200.32 153.45 197.04 153.45 193.02C153.45 189 156.03 185.72 159.2 185.72H319.23C322.4 185.72 324.98 189 324.98 193.02C324.98 197.04 322.4 200.32 319.23 200.32Z" fill="#DADBDC" />
-                            <path id="phone-line2" d="M319.23 232.67H159.2C156.03 232.67 153.45 229.39 153.45 225.37C153.45 221.35 156.03 218.07 159.2 218.07H319.23C322.4 218.07 324.98 221.35 324.98 225.37C324.98 229.39 322.4 232.67 319.23 232.67Z" fill="#DADBDC" />
-                            <path id="phone-line3" d="M273.34 265.02H159.2C156.03 265.02 153.45 261.74 153.45 257.72C153.45 253.7 156.03 250.42 159.2 250.42H273.34C276.51 250.42 279.09 253.7 279.09 257.72C279.09 261.74 276.51 265.02 273.34 265.02Z" fill="#DADBDC" />
+                            <path id="hero-phone-line1" d="M319.23 200.32H159.2C156.03 200.32 153.45 197.04 153.45 193.02C153.45 189 156.03 185.72 159.2 185.72H319.23C322.4 185.72 324.98 189 324.98 193.02C324.98 197.04 322.4 200.32 319.23 200.32Z" fill="#DADBDC" />
+                            <path id="hero-phone-line2" d="M319.23 232.67H159.2C156.03 232.67 153.45 229.39 153.45 225.37C153.45 221.35 156.03 218.07 159.2 218.07H319.23C322.4 218.07 324.98 221.35 324.98 225.37C324.98 229.39 322.4 232.67 319.23 232.67Z" fill="#DADBDC" />
+                            <path id="hero-phone-line3" d="M273.34 265.02H159.2C156.03 265.02 153.45 261.74 153.45 257.72C153.45 253.7 156.03 250.42 159.2 250.42H273.34C276.51 250.42 279.09 253.7 279.09 257.72C279.09 261.74 276.51 265.02 273.34 265.02Z" fill="#DADBDC" />
                             <g id="tick-circle">
                                 <path id="Vector_4" d="M236.07 455.22C273.797 455.22 304.38 424.637 304.38 386.91C304.38 349.183 273.797 318.6 236.07 318.6C198.343 318.6 167.76 349.183 167.76 386.91C167.76 424.637 198.343 455.22 236.07 455.22Z" fill="#5EA51D" />
                                 <path id="Vector_5" d="M217.9 388.33C221.43 395.24 224.96 402.16 228.49 409.07C229.5 411.06 232.47 410.43 233.06 408.47C237.69 393.03 246.29 378.96 257.88 367.77C260.2 365.53 256.66 362 254.34 364.23C242.14 376.01 233.11 390.9 228.23 407.14L232.8 406.54C229.27 399.63 225.74 392.71 222.21 385.8C220.75 382.93 216.43 385.46 217.89 388.32H217.9V388.33Z" fill="white" />
@@ -382,15 +427,15 @@ const Home = () => {
                     <div className="services-nav">
                         <h1 className="section-title">Our <span>Services</span></h1>
                         <ul className="services-nav-ul">
-                            <li><span>Chatbot Development</span></li>
-                            <li><span>AI Phone Agents</span></li>
-                            <li><span>Workflow Automations </span></li>
+                            <li onClick={scrollChat}><span>Chatbot Development</span></li>
+                            <li onClick={scrollPhone}><span>AI Phone Agents</span></li>
+                            <li onClick={scrollAutomations}><span>Workflow Automations </span></li>
                         </ul>
                     </div>
 
 
                     <div className="services-container">
-                        <div className="service servce1">
+                        <div className="service service1">
                             <div className="service-left service-content">
                                 <h1 className="service-title">Chatbot <span>Development</span></h1>
                                 <p className="section-p">We build you bespoke AI Chatbots that not only handle over 80% of your customer support, but also a myriad of various tasks e.g saving info to CRM, booking meetings, lead qualification e.t.c all based on your unique business needs</p>
@@ -416,7 +461,7 @@ const Home = () => {
                                 </svg>
                             </div>
                         </div>
-                        <div className="service servce2">
+                        <div className="service service2">
                             <div className="service-left">
                                 <svg width="363" height="728" className='phone-svg' viewBox="0 0 363 728" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g id="Group 22">
@@ -477,7 +522,7 @@ const Home = () => {
                                 <p className="section-p">Our AI phone systems can automate business calls by handling routine inquiries, scheduling appointments, and providing information without any human intervention.</p>
                             </div>
                         </div>
-                        <div className="service servce3">
+                        <div className="service service3">
                             <div className="service-left service-content">
                                 <h1 className="service-title">Workflow <span>Automations</span></h1>
                                 <p className="section-p">We build you bespoke AI Chatbots that not only handle over 80% of your customer support, but also a myriad of various tasks e.g saving info to CRM, booking meetings, lead qualification e.t.c all based on your unique business needs</p>
@@ -576,6 +621,13 @@ const Home = () => {
                     <div className="contact-left">
                         <h1 className="section-title">Contact <span>Us</span></h1>
                         <p className="section-p">Got a burning AI Idea, question, or just want to chat about what we do, feel free to reach out to our friendly team at Begryp, and we’ll get right back to you.</p>
+
+                        <div className="watermark-div">
+                            <h1 className='ai'>AI</h1>
+                            <h1 className='auto'>AUTO</h1>
+                            <h1 className='mation'>MATION</h1>
+                            <h1 className='tech'>TECH</h1>
+                        </div>
                     </div>
                     <div className="contact-right">
                         <form>
