@@ -350,6 +350,148 @@
     .nav-container .top-nav .logo-ul {
         gap: 5em;
     }
-
 }
 
+@media(min-width: 900px) {
+
+    .nav-container .top-nav .top-nav-ul {
+        gap: 2em;
+    }
+
+    .nav-container .top-nav .top-nav-ul li a {
+        font-size: 1.1rem;
+    }
+
+    .nav-container .top-nav .soc-burger .cta-a {
+        font-size: 1.2rem;
+    }
+}
+
+@media(min-width: 1000px) {
+    .nav-container {
+        padding: 1.5em 5em 1em 5em;
+    }
+
+    .nav-container .top-nav .top-nav-ul li::after {
+        height: .2em;
+    }
+
+    .nav-container .top-nav .logo {
+        width: 5em;
+    }
+
+    .nav-container.active {
+        padding: 1.7em 0.7em;
+    }
+
+    .nav-container.active .top-nav .logo-ul {
+        gap: 10em;
+    }
+}
+
+@media(min-width: 1050px) {
+
+    .nav-container .top-nav .logo-ul {
+        gap: 7em;
+    }
+
+    .nav-container .top-nav .top-nav-ul {
+        gap: 3em;
+    }
+
+    .nav-container .top-nav .top-nav-ul li a {
+        font-size: 1.3rem;
+    }
+
+    .nav-container .top-nav .soc-burger .cta-a {
+        font-size: 1.4rem;
+    }
+}
+
+@media(min-width: 1100px) {
+    .nav-container.active {
+        padding: 1.7em 2.7em;
+    }
+}
+
+@media(min-width: 1200px) {
+    .nav-container {
+        padding: 1.5em 6.25em 1em 6.25em;
+    }
+
+    .nav-container.active {
+        padding: 1.7em 3.7em;
+    }
+
+    .nav-container.active .logo {
+        left: 3em;
+    }
+
+    .nav-container.active .top-nav .logo-ul {
+        gap: 12em;
+    }
+
+    .nav-container .top-nav .logo-ul {
+        gap: 8em;
+    }
+}
+
+@media(min-width: 1350px) {
+    .nav-container .top-nav .logo {
+        width: 6em;
+    }
+
+    .nav-container .top-nav .top-nav-ul li a {
+        font-size: 1.5rem;
+    }
+
+    .nav-container .top-nav .soc-burger .cta-a {
+        font-size: 1.6rem;
+    }
+}
+
+@media(min-width: 1451px) {
+    .nav-container {
+        padding: 1.5em 9.375em 1em 9.375em;
+    }
+
+    .nav-container.active {
+        padding: 2em 8em;
+    }
+
+    .nav-container.active .logo {
+        left: 8em;
+    }
+
+    .nav-container.active .top-nav .logo-ul {
+        gap: 15em;
+    }
+}
+
+@media(min-width: 1550px) {
+
+    .nav-container.active {
+        padding: 2.5em 8em;
+    }
+
+    .nav-container .top-nav .logo {
+        width: 7em;
+    }
+
+    .nav-container .top-nav .logo-ul {
+        gap: 9em;
+    }
+
+    .nav-container .top-nav .top-nav-ul {
+        gap: 5em;
+    }
+
+    .nav-container .top-nav .top-nav-ul li a {
+        font-size: 1.7rem;
+    }
+
+    .nav-container .top-nav .soc-burger .cta-a {
+        font-size: 1.8rem;
+    }
+    
+}

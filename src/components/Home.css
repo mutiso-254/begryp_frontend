@@ -18,6 +18,42 @@ html {
 }
 
 
+/* LOADER CSS */
+
+.loader-wrapper {
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+    background: #ffffff;
+    z-index: 50;
+}
+
+.loader-wrapper.disappear {
+    animation: vanish 1s forwards;
+}
+
+.loader-wrapper img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35em;
+}
+
+
+@keyframes vanish {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* LOADER CSS END */
+
+
 
 /* Fade In Css */
 
@@ -129,6 +165,7 @@ html {
 .home-container .section.hero-section .hero-growth,
 .home-container .section.hero-section .hero-phone {
     display: none;
+    opacity: .4;
 }
 
 .home-container .section.hero-section .hero-watermark {
@@ -1256,6 +1293,54 @@ html {
             fill: var(--primary);
         }
     }
+
+
+    .home-container .section.services-section .services-container .service.service1 .service-right svg #robot-circle1 {
+        animation: robot-circle1-anim .5s infinite alternate 1s;
+    }
+
+    @keyframes robot-circle1-anim {
+        from {
+            fill: #ffffff;
+        }
+
+        to {
+            fill: var(--primary);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service1 .service-right svg #robot-circle2 {
+        animation: robot-circle2-anim .5s infinite alternate 1.5s;
+    }
+
+    @keyframes robot-circle2-anim {
+        from {
+            fill: #ffffff;
+        }
+
+        to {
+            fill: var(--primary);
+        }
+    }
+
+    .home-container .section.services-section .services-container .service.service1 .service-right svg #robot-circle3 {
+        animation: robot-circle3-anim .5s infinite alternate 2s;
+    }
+
+    @keyframes robot-circle3-anim {
+        from {
+            fill: #ffffff;
+        }
+
+        to {
+            fill: var(--primary);
+        }
+    }
+
+
+
+
+
 
     .home-container .section.services-section .services-container .service.service2 .service-left svg #phone-green-line {
         animation: phone-green-line-anim 2s infinite alternate;
@@ -2469,5 +2554,774 @@ html {
 
     .home-container .section.footer-section .footer-left .footer-logo {
         width: 5em;
+    }
+}
+
+@media(min-width: 900px) {
+    .home-container .section.hero-section .hero-content .hero-title {
+        max-width: 30rem;
+        font-size: 2.7rem;
+        line-height: 2.7rem;
+    }
+
+    .home-container .section.hero-section .hero-content .hero-title .hero-title-span {
+        font-size: 3.3rem;
+    }
+
+    .home-container .section.hero-section .hero-watermark {
+        width: 31em;
+    }
+
+    .home-container .section.hero-section .hero-growth {
+        width: 14em;
+        top: 8em;
+    }
+
+    .home-container .section.hero-section .hero-phone {
+        right: 4em;
+        top: 3em;
+        width: 10em;
+    }
+
+    .home-container .section.hero-section .hero-content {
+        gap: 1em;
+    }
+
+    .home-container .section.hero-section .hero-content .hero-p {
+        font-size: 1.3rem;
+        max-width: 20rem;
+        line-height: 1.6rem;
+    }
+
+    .home-container .cta-btn {
+        padding: 0.3rem 2.8rem;
+        font-size: 1.3rem;
+    }
+
+    .home-container .section-title {
+        font-size: 2.3rem;
+    }
+
+    .home-container .section.services-section .services-nav .services-nav-ul {
+        padding: 1.7em 3.125em 0.9em 3.125em;
+    }
+
+    .home-container .section.services-section .services-nav .services-nav-ul li span {
+        font-size: 1.2rem;
+    }
+
+    .home-container .section.services-section .services-container .service-title {
+        font-size: 1.9rem;
+    }
+
+    .home-container .section-p {
+        font-size: 1.2rem;
+        line-height: 1.7rem;
+    }
+
+    .home-container .section.services-section .services-container .service.service1 .service-right svg {
+        width: 13em;
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg {
+        width: 7em;
+    }
+
+    .home-container .section.services-section .services-container .service.service3 .service-right svg {
+        width: 12em;
+        right: 5%;
+    }
+
+    .home-container .section.services-section .services-watermark {
+        width: 38em;
+    }
+
+    .home-container .section.services-section .services-watermark.services-watermark2 {
+        top: 100%;
+        transform: translateY(-100%);
+        left: 19em;
+    }
+}
+
+@media(min-width: 950px) {
+    .home-container .section.hero-section {
+        padding: 11em 1.5em 6em 1.5em;
+    }
+}
+
+@media(min-width: 1000px) {
+
+    .loader-wrapper img {
+        width: 40em;
+    }
+
+    .home-container .section.services-section .services-nav .services-nav-ul {
+        padding: 1.7em 5em 0.9em 5em;
+    }
+
+    .home-container .section.services-section .services-nav::before {
+        width: 8em;
+    }
+
+    .home-container .section.services-section .services-nav::after {
+        width: 8em;
+    }
+
+    .home-container .section.services-section .services-container {
+        padding: 3em 5em;
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg {
+        left: 16%;
+    }
+
+    .home-container .section.about-section {
+        padding: 0 5em;
+    }
+
+    .home-container .section.about-section .about-wrapper .about-container {
+        padding: 3em 5.5em;
+    }
+
+    .home-container .section.about-section .about-wrapper .about-container .about-content {
+        gap: 1em;
+    }
+
+    .home-container .section.about-section .doodles .doodle {
+        width: 7em !important;
+    }
+
+    .home-container .section.about-section .doodles .doodle.doodle1-right {
+        right: 0em;
+    }
+
+    .home-container .section.about-section .doodles .doodle.doodle3-right {
+        right: 0em;
+    }
+
+    .home-container .section.cta-section {
+        padding: 3em 5em 1em 5em;
+    }
+
+    .home-container .section.contact-section {
+        padding: 1.5em 5em;
+    }
+
+    .home-container .section.contact-section .contact-right form {
+        gap: .7em;
+    }
+
+    .home-container .section.contact-section .contact-right form label {
+        font-size: 1.25rem;
+    }
+
+    .home-container .section.contact-section .contact-right form input {
+        font-size: 1.2rem;
+    }
+
+    .home-container .section.contact-section .contact-right form textarea {
+        font-size: 1.2rem;
+    }
+
+    .home-container .section.contact-section .watermark-div h1.ai {
+        top: -7rem;
+        font-size: 18rem;
+        left: -1.5rem;
+    }
+
+    .home-container .section.contact-section .watermark-div h1.tech {
+        top: 0rem;
+        font-size: 7.5rem;
+        left: 2.7rem;
+    }
+
+    .home-container .section.contact-section .watermark-div h1.auto {
+        font-size: 7rem;
+        top: 6rem;
+        left: 1.5rem;
+    }
+
+    .home-container .section.contact-section .watermark-div h1.mation {
+        font-size: 4.5rem;
+        top: 10rem;
+        left: 6rem;
+    }
+
+    .home-container .section.footer-section {
+        padding: 1em 5em;
+    }
+}
+
+@media(min-width: 1050px) {
+
+    .home-container .section.hero-section {
+        padding: 12em 1.5em 6em 1.5em;
+    }
+
+    .home-container .section.hero-section .hero-growth {
+        width: 14em;
+        top: 12em;
+        left: 5em;
+    }
+    
+    .home-container .section.hero-section .hero-phone {
+        right: 6em;
+        top: 7em;
+        width: 11em;
+    }
+
+    .home-container .section.hero-section .hero-watermark {
+        width: 35em;
+    }
+
+    .home-container .section.hero-section .hero-content .hero-title {
+        max-width: 33rem;
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+
+    .home-container .section.hero-section .hero-content .hero-title .hero-title-span {
+        font-size: 3.6rem;
+    }
+
+    .home-container .section.contact-section .contact-right form .send-btn {
+        font-size: 1.3rem;
+    }
+}
+
+@media(min-width: 1100px) {
+
+    .home-container .section.hero-section .hero-content {
+        gap: 1.3em;
+    }
+
+    .home-container .section.hero-section .hero-content .hero-p {
+        font-size: 1.5rem;
+        max-width: 25rem;
+        line-height: 1.7rem;
+    }
+
+    .home-container .cta-btn {
+        font-size: 1.5rem;
+        gap: 2rem;
+    }
+
+
+    .home-container .section-title {
+        font-size: 2.7rem;
+    }
+
+    .home-container .section.services-section .services-nav .services-nav-ul {
+        padding: 2em 5em 1em 5em;
+    }
+
+    .home-container .section.services-section .services-nav .services-nav-ul li::after {
+        height: .2em;
+    }
+
+    .home-container .section.services-section .services-nav .services-nav-ul li span {
+        font-size: 1.3rem;
+    }
+
+    .home-container .section.services-section .services-container .service-title {
+        font-size: 2.3rem;
+    }
+
+    .home-container .section.services-section .services-container .service-content {
+        gap: 1em;
+    }
+
+    .home-container .section-p {
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+
+    .home-container .section.footer-section .footer-right .email-div span {
+        font-size: 1.5rem;
+    }
+
+    .home-container .section.footer-section .footer-right .terms-div a {
+        font-size: 1.5rem;
+    }
+
+    .home-container .section.footer-section .footer-right .email-div .email-icon {
+        width: 2em;
+    }
+}
+
+@media(min-width: 1150px) {
+
+    .home-container .section.hero-section .hero-growth {
+        width: 16em;
+    }
+
+    .home-container .section.hero-section .hero-phone {
+        width: 13em;
+    }
+
+    .home-container .section.services-section .services-container {
+        gap: 7em;
+    }
+
+    .home-container .section.services-section .services-container .service.service1 .service-right svg {
+        width: 16em;
+        right: 3%;
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg {
+        width: 8em;
+        left: 20%;
+    }
+
+    .home-container .section.services-section .services-container .service.service3 .service-right svg {
+        width: 14em;
+        right: 7%;
+    }
+
+    .home-container .section.services-section .services-watermark {
+        width: 41em;
+    }
+
+    .home-container .section.footer-section .footer-left .footer-logo {
+        width: 6em;
+    }
+}
+
+
+@media(min-width: 1200px) {
+    .home-container .section.hero-section .hero-content .hero-title {
+        max-width: 39rem;
+        font-size: 3.5rem;
+        line-height: 3.3rem;
+    }
+
+    .home-container .section.hero-section .hero-content .hero-title .hero-title-span {
+        font-size: 4.3rem;
+    }
+
+    .home-container .section.hero-section .hero-watermark {
+        width: 37em;
+    }
+
+    .home-container .section.services-section .services-nav .services-nav-ul {
+        padding: 2em 6.25em 1em 6.25em;
+    }
+
+    .home-container .section.services-section .services-container {
+        padding: 3em 6.25em;
+    }
+
+    .home-container .section.about-section {
+        padding: 0 6.25em;
+    }
+
+    .home-container .section.about-section .about-wrapper .about-container {
+        padding: 4em 6.5em;
+        transform: translateX(-0.9em);
+    }
+
+    .home-container .section.about-section .about-wrapper .peeping-img {
+        width: 9em;
+    }
+
+    .home-container .section.about-section .doodles .doodle {
+        width: 9em !important;
+    }
+
+    .home-container .section.cta-section {
+        padding: 3em 6.25em 1em 6.25em;
+    }
+
+    .home-container .section.contact-section {
+        padding: 1.5em 6.25em;
+    }
+
+    .home-container .section.contact-section .watermark-div h1.ai {
+        left: -.5rem;
+    }
+
+    .home-container .section.contact-section .watermark-div h1.tech {
+        left: 3.7rem;
+    }
+
+    .home-container .section.contact-section .watermark-div h1.auto {
+        left: 2.5rem;
+    }
+
+    .home-container .section.contact-section .watermark-div h1.mation {
+        left: 7rem;
+    }
+
+    .home-container .section.footer-section {
+        padding: 1em 6.25em;
+    }
+}
+
+
+
+@media(min-width: 1300px) {
+    .loader-wrapper img {
+        width: 40em;
+    }
+}
+
+@media(min-width: 1350px) {
+
+    .home-container .section.hero-section {
+        padding: 14em 1.5em 7em 1.5em;
+    }
+
+    .home-container .section.hero-section .hero-watermark {
+        width: 42em;
+    }
+
+    .home-container .section.hero-section .hero-content .hero-title {
+        max-width: 44rem;
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+
+    .home-container .section.hero-section .hero-content .hero-title .hero-title-span {
+        font-size: 4.7rem;
+    }
+
+    .home-container .section.hero-section .hero-content .hero-p {
+        font-size: 1.7rem;
+        max-width: 29rem;
+        line-height: 1.9rem;
+    }
+
+    .home-container .cta-btn {
+        font-size: 1.7rem;
+    }
+
+    .home-container .section.hero-section .hero-growth {
+        width: 17em;
+        top: 18em;
+    }
+
+    .home-container .section.hero-section .hero-phone {
+        right: 6em;
+        top: 12em;
+        width: 12em;
+    }
+
+    .home-container .section.services-section .services-nav .services-nav-ul li span {
+        font-size: 1.5rem;
+    }
+
+    .home-container .section.services-section .services-nav .services-nav-ul {
+        padding: 3em 6.25em 2em 6.25em;
+    }
+
+    .home-container .section-title {
+        font-size: 3rem;
+    }
+
+    .home-container .section-p {
+        font-size: 1.6rem;
+        line-height: 2.3rem;
+    }
+
+    .home-container .section.services-section .services-container .service-content {
+        gap: 1.2em;
+    }
+
+    .home-container .section.services-section .services-container .service-title {
+        font-size: 2.6rem;
+    }
+}
+
+@media(min-width: 1400px) {
+
+    .home-container .section.services-section .services-watermark {
+        width: 49em;
+    }
+
+    .home-container .section.services-section .services-watermark.services-watermark2 {
+        top: 90%;
+        transform: translateY(-90%);
+    }
+
+    .home-container .section.services-section .services-container {
+        gap: 9em;
+    }
+
+    .home-container .section.services-section .services-container .service.service1 .service-right svg {
+        width: 18em;
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg {
+        width: 10em;
+    }
+
+    .home-container .section.services-section .services-container .service.service3 .service-right svg {
+        width: 16em;
+    }
+
+    .home-container .section.contact-section .watermark-div h1.tech {
+        left: 13.5rem;
+    }
+
+    .home-container .section.contact-section .watermark-div h1.mation {
+        left: 16rem;
+        top: 10rem;
+    }
+
+    .home-container .section.contact-section .contact-right form input {
+        font-size: 1.5rem;
+    }
+
+    .home-container .section.contact-section .contact-right form textarea {
+        font-size: 1.5rem;
+    }
+
+    .home-container .section.contact-section .contact-right form label {
+        font-size: 1.4rem;
+    }
+
+}
+
+
+@media(min-width: 1451px) {
+    .home-container .section.services-section .services-nav .services-nav-ul {
+        padding: 3em 9.375em 2em 9.375em;
+    }
+
+    .home-container .section.services-section .services-container {
+        padding: 4em 9.375em;
+    }
+
+    .home-container .section.services-section .services-nav::before {
+        width: 14em;
+    }
+
+    .home-container .section.services-section .services-nav::after {
+        width: 14em;
+    }
+
+    .home-container .section.about-section {
+        padding: 0 9.375em;
+    }
+
+    .home-container .section.about-section .about-wrapper .about-container .about-content {
+        gap: 1.5em;
+    }
+
+    .home-container .section.about-section .doodles .doodle.doodle1-left {
+        left: 3em;
+    }
+
+    .home-container .section.about-section .doodles .doodle.doodle2-left {
+        left: 3em;
+    }
+
+    .home-container .section.about-section .doodles .doodle.doodle3-left {
+        left: 6em;
+    }
+
+    .home-container .section.about-section .doodles .doodle.doodle1-right {
+        right: 3em;
+    }
+
+    .home-container .section.about-section .doodles .doodle.doodle2-right {
+        right: 1em;
+    }
+
+    .home-container .section.about-section .doodles .doodle.doodle3-right {
+        right: 3em;
+    }
+
+    .home-container .section.contact-section {
+        padding: 1.5em 9.375em;
+    }
+
+    .home-container .section.contact-section .contact-right form .send-btn {
+        font-size: 1.6rem;
+    }
+
+    .home-container .section.footer-section {
+        padding: 1.5em 9.375em;
+    }
+
+    .home-container .section.footer-section .footer-left .footer-logo {
+        width: 7em;
+    }
+}
+
+
+@media(min-width: 1500px) {
+
+    .home-container .section.hero-section {
+        padding: 15em 1.5em 8em 1.5em;
+    }
+
+    .home-container .section.hero-section .hero-growth {
+        width: 19em;
+        left: 5em;
+    }
+
+    .home-container .section.hero-section .hero-phone {
+        right: 8em;
+        top: 12em;
+        width: 14em;
+    }
+
+    .home-container .section.services-section .services-nav {
+        padding: 1.9em 0 1em 0;
+    }
+
+    .home-container .section.services-section .services-watermark {
+        width: 54em;
+    }
+
+    .home-container .section.services-section .services-watermark.services-watermark2 {
+        left: 26em;
+    }
+
+    .home-container .section.contact-section {
+        margin-top: 1em;
+    }
+}
+
+@media(min-width: 1550px) {
+
+    .home-container .section.hero-section {
+        padding: 16em 1.5em 9em 1.5em;
+    }
+
+    .home-container .section.hero-section .hero-watermark {
+        width: 49em;
+    }
+
+    .home-container .section.hero-section .hero-growth {
+        width: 20em;
+        left: 6em;
+        top: 23em;
+    }
+
+    .home-container .section.hero-section .hero-phone {
+        right: 8em;
+        top: 16em;
+        width: 16em;
+    }
+
+    .home-container .section.hero-section .hero-content {
+        gap: 1.5em;
+    }
+
+    .home-container .section.hero-section .hero-content .hero-title {
+        max-width: 56rem;
+        font-size: 5rem;
+        line-height: 4.5rem;
+    }
+
+    .home-container .section.hero-section .hero-content .hero-title .hero-title-span {
+        font-size: 6.3rem;
+    }
+
+    .home-container .section.hero-section .hero-content .hero-p {
+        font-size: 2rem;
+        max-width: 33rem;
+        line-height: 2.1rem;
+    }
+
+    .home-container .cta-btn {
+        font-size: 2rem;
+        padding: 0.5rem 3.8rem;
+    }
+
+    .home-container .section-title {
+        font-size: 3.5rem;
+    }
+
+    .home-container .section.services-section .services-nav {
+        padding: 2.5em 0 1.3em 0;
+    }
+
+    .home-container .section.services-section .services-nav .services-nav-ul {
+        padding: 3.3em 9.375em 2em 9.375em;
+    }
+
+    .home-container .section.services-section .services-container {
+        padding: 5em 9.375em;
+        gap: 11em;
+    }
+
+    .home-container .section.services-section .services-container .service-title {
+        font-size: 3.2rem;
+    }
+
+    .home-container .section-p {
+        font-size: 1.9rem;
+        line-height: 2.5rem;
+    }
+
+    .home-container .section.services-section .services-nav .services-nav-ul li span {
+        font-size: 1.7em;
+    }
+
+    .home-container .section.services-section .services-container .service.service1 .service-right svg {
+        width: 22em;
+    }
+
+    .home-container .section.services-section .services-container .service.service2 .service-left svg {
+        width: 12em;
+    }
+
+    .home-container .section.services-section .services-container .service.service3 .service-right svg {
+        width: 19em;
+    }
+
+    .home-container .section.about-section .about-wrapper .about-container .about-content {
+        gap: 1.8em;
+    }
+
+    .home-container .section.contact-section .contact-left {
+        gap: 1.5em;
+    }
+
+    .home-container .section.contact-section .contact-right form input {
+        font-size: 1.7rem;
+    }
+
+    .home-container .section.contact-section .contact-right form label {
+        font-size: 1.7rem;
+    }
+
+    .home-container .section.contact-section .contact-right form textarea {
+        font-size: 1.7rem;
+    }
+
+    .home-container .section.contact-section .contact-right form .send-btn {
+        gap: 2rem;
+    }
+
+    .home-container .section.footer-section .footer-right .email-div span {
+        font-size: 1.9rem;
+    }
+
+    .home-container .section.footer-section .footer-right .terms-div a {
+        font-size: 1.9rem;
+    }
+
+    .home-container .section.footer-section .footer-right .email-div .email-icon {
+        width: 2.4em;
+    }
+
+    .home-container .section.footer-section .footer-right {
+        gap: 1.5em;
+    }
+
+    .home-container .section.footer-section .footer-left .footer-logo {
+        width: 8em;
+    }
+    
+}
+
+
+@media(min-width: 1600px) {
+    .loader-wrapper img {
+        width: 50em;
     }
 }

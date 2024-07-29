@@ -16,10 +16,28 @@ import sendIcon from "../images/send-icon.png"
 import plainLogo from "../images/plain-logo.png"
 import emailIcon from "../images/email-icon.png"
 import aiMesh from "../images/ai-mesh.svg"
+import { useDispatch } from "react-redux"
+import axios from "axios"
+import loadingGif from "../images/loading.gif"
+
 
 
 
 const Home = () => {
+
+
+    // STATES
+
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [subject, setSubject] = useState('')
+    const [message, setMessage] = useState('')
+
+    const [loading, setLoading] = useState(false)
+
+    ///////////////////////////////////////////////////////////////////////////////////
+
+
 
 
     // INITIALIZATIONS
@@ -35,13 +53,56 @@ const Home = () => {
         }
     })
 
+    const dispatch = useDispatch()
+
+
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+    // GET COOKIE FUNCTION
+
+    const getCookie = (name) => {
+        // Split cookie string and get all individual name=value pairs in an array
+        var cookieArr = document.cookie.split(";");
+
+        // Loop through the array elements
+        for (var i = 0; i < cookieArr.length; i++) {
+            var cookiePair = cookieArr[i].split("=");
+
+            /* Removing whitespace at the beginning of the cookie name
+            and compare it with the given string */
+            if (name == cookiePair[0].trim()) {
+                // Decode the cookie value and return
+                return decodeURIComponent(cookiePair[1]);
+            }
+        }
+    }
+
+    /////////////////////////////////////////
+
+    const csrftoken = getCookie('csrftoken');
+
 
 
     // USEEFFECTS
+
+
+    // LOAD DISAPPEAR USEEFFECT
+
+    useEffect(() => {
+        const loader = document.querySelector('.loader-wrapper')
+
+        function vanish() {
+            loader.classList.add('disappear')
+        }
+
+
+        window.addEventListener('load', vanish)
+    }, [])
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
 
 
     // TYPEWRITING EFFECT
@@ -292,7 +353,7 @@ const Home = () => {
 
     const scrollChat = () => {
         const serviceContainer = document.querySelector('.home-container .services-section .services-container .service1')
-        console.log("Here's the service container: ",serviceContainer)
+        console.log("Here's the service container: ", serviceContainer)
         const bodyRect = document.body.getBoundingClientRect()
         const elementRect = serviceContainer.getBoundingClientRect()
 
@@ -330,7 +391,132 @@ const Home = () => {
         window.scrollTo(0, verticalPosition - navHeight)
     }
 
-    
+
+    const onBeforeSubmit = (e) => {
+        e.preventDefault()
+
+        if (name.length == 0) {
+            const message = {
+                type: 'info',
+                message: "Kindly enter your name"
+            }
+            dispatch({
+                type: 'GET_MESSAGES',
+                payload: message
+            })
+        } else if (email.length == 0) {
+            const message = {
+                type: 'info',
+                message: "Kindly enter your email address"
+            }
+            dispatch({
+                type: 'GET_MESSAGES',
+                payload: message
+            })
+        } else if (subject.length == 0) {
+            const message = {
+                type: 'info',
+                message: "Kindly enter the subject of your message"
+            }
+            dispatch({
+                type: 'GET_MESSAGES',
+                payload: message
+            })
+        } else if (message.length == 0) {
+            const message = {
+                type: 'info',
+                message: "Kindly enter your message"
+            }
+            dispatch({
+                type: 'GET_MESSAGES',
+                payload: message
+            })
+        } else {
+            setLoading(true)
+
+            const payload = {
+                "name": name,
+                "email": email,
+                "subject": subject,
+                "message": message,
+            }
+
+            onSubmit(payload)
+        }
+
+    }
+
+
+    const onSubmit = (payload) => {
+
+
+
+        axios.post("http://localhost:8000/api/send_mail", payload, { headers: { 'X-CSRFToken': csrftoken } })
+            .then(res => {
+
+                dispatch({
+                    type: "GET_MESSAGES",
+                    payload: res.data
+                })
+
+                setName('')
+                setEmail('')
+                setSubject('')
+                setMessage('')
+
+                setLoading(false)
+            })
+            .catch(err => {
+                const error = {
+                    message: err.response.data,
+                    status: err.response.status
+                }
+
+                dispatch({
+                    type: 'GET_ERRORS',
+                    payload: error
+                })
+                setLoading(false)
+            })
+
+
+        // // Whatsapp Headers
+        // const headers = {
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //         'Authorization': 'Bearer EAAKaincrvBwBO3GNI6iXtzydyJn4uJ2BNxMpup6qqbSogyMo7mZCaLotcMzuZCiXZCqjmdpIaB1WI1GT8PqfrZCxZCzcM4SZC9E13d2xAMBDXLPQiIfbH4BBnOaZAhoEUpTHog95q535ZBBZAIdzjJ1a21YXkvhKYnXRZChzQYi57c24RMe263RKL7qqATRjxlZCIVJVgZDZD'
+        //     }
+        // }
+
+        // // Mutiso Msg
+        // const waMsg = {
+        //     "messaging_product": "whatsapp",
+        //     "recipient_type": "individual",
+        //     "to": "254759161361",
+        //     "type": "text",
+        //     "text": {
+        //         "preview_url": false,
+        //         "body": `Customer has reached out with a query\nName: ${name} \nEmail: ${email}\nSubject: ${subject} \nThe Message: ${message}`
+        //     }
+        // }
+
+        
+
+        // // Send Me Mutiso a notification
+        // axios.post('https://graph.facebook.com/v17.0/174669262396800/messages', waMsg, headers)
+        //     .then(res => {
+        //         console.log("Here's the response: ", res)
+        //     })
+        //     .catch(err => {
+        //         console.log("Here's the error: ", err)
+
+        //     })
+
+
+
+    }
+
+
 
 
 
@@ -347,8 +533,8 @@ const Home = () => {
 
                 <section className="section hero-section">
 
-                    <img src={begrypGrowthWatermark} alt="" className="hero-watermark" />
-                    <svg width="591" height="517" viewBox="0 0 591 517" className="hero-growth" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <img src={begrypGrowthWatermark} alt="" className="hero-watermark" loading='lazy'/>
+                    <svg width="591" height="517" viewBox="0 0 591 517" className="hero-growth appear-left" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="Group 19">
                             <g id="leaf1">
                                 <path id="Vector" d="M425.634 510.031C416.641 502.432 411.179 490.428 412.611 478.743C414.044 467.057 422.916 456.314 434.424 453.833C445.933 451.351 459.052 458.221 462.548 469.463C464.471 447.788 466.688 425.206 478.212 406.748C488.646 390.035 506.718 378.076 526.305 375.936C545.891 373.797 566.513 381.877 578.728 397.337C590.944 412.796 593.935 435.271 585.379 453.019C579.077 466.094 567.466 475.824 555.3 483.74C515.988 509.105 468.839 519.42 422.528 512.787" fill="#F2F2F2" />
@@ -377,7 +563,7 @@ const Home = () => {
                             </g>
                         </g>
                     </svg>
-                    <svg width="384" height="607" className='hero-phone' viewBox="0 0 384 607" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="384" height="607" className='hero-phone appear-right' viewBox="0 0 384 607" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="Group 20">
                             <path id="Vector" d="M332.63 606.19H139.51C111.42 606.19 88.5701 583.34 88.5701 555.25V50.94C88.5701 22.85 111.42 0 139.51 0H332.63C360.72 0 383.57 22.85 383.57 50.94V555.25C383.57 583.34 360.72 606.19 332.63 606.19Z" fill="#DADBDC" />
                             <path id="Vector_2" d="M332.77 592.4H139.37C118.58 592.4 101.66 575.48 101.66 554.69V50.51C101.66 29.72 118.58 12.8 139.37 12.8H332.77C353.56 12.8 370.48 29.72 370.48 50.51V554.69C370.48 575.48 353.56 592.4 332.77 592.4Z" fill="white" />
@@ -416,17 +602,17 @@ const Home = () => {
                         <p className="hero-p section-p appear-down">Unlock the hidden potential within your business with our bespoke AI solutions.</p>
                         <Button onClick={scrollSection} variant='contained' className='cta-btn appear-left' color='secondary'>
                             <span>Book&nbsp;<span className='a-span'>A</span>&nbsp;Call</span>
-                            <img src={callIcon} alt="" className='call-icon' />
+                            <img src={callIcon} alt="" className='call-icon' loading='lazy'/>
                         </Button>
                     </div>
                 </section>
 
                 <section className="section services-section">
-                    <img src={aiMesh} className='services-watermark1 services-watermark' alt="" />
-                    <img src={aiMesh} className='services-watermark2 services-watermark' alt="" />
+                    <img src={aiMesh} className='services-watermark1 services-watermark' alt="" loading='lazy'/>
+                    <img src={aiMesh} className='services-watermark2 services-watermark' alt="" loading='lazy'/>
                     <div className="services-nav">
-                        <h1 className="section-title">Our <span>Services</span></h1>
-                        <ul className="services-nav-ul">
+                        <h1 className="section-title appear-left">Our <span>Services</span></h1>
+                        <ul className="services-nav-ul appear-right">
                             <li onClick={scrollChat}><span>Chatbot Development</span></li>
                             <li onClick={scrollPhone}><span>AI Phone Agents</span></li>
                             <li onClick={scrollAutomations}><span>Workflow Automations </span></li>
@@ -436,12 +622,12 @@ const Home = () => {
 
                     <div className="services-container">
                         <div className="service service1">
-                            <div className="service-left service-content">
+                            <div className="service-left service-content appear-left">
                                 <h1 className="service-title">Chatbot <span>Development</span></h1>
                                 <p className="section-p">We build you bespoke AI Chatbots that not only handle over 80% of your customer support, but also a myriad of various tasks e.g saving info to CRM, booking meetings, lead qualification e.t.c all based on your unique business needs</p>
                             </div>
                             <div className="service-right">
-                                <svg width="454" height="382" className='robot-svg' viewBox="0 0 454 382" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="454" height="382" className='robot-svg appear-right' viewBox="0 0 454 382" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g id="Group 21">
                                         <path id="Vector" d="M415.519 215.99C436.505 215.99 453.519 198.977 453.519 177.99C453.519 157.003 436.505 139.99 415.519 139.99C394.532 139.99 377.519 157.003 377.519 177.99C377.519 198.977 394.532 215.99 415.519 215.99Z" fill="#F2F2F2" />
                                         <path id="Vector_2" d="M415.519 187.99C421.041 187.99 425.519 183.513 425.519 177.99C425.519 172.467 421.041 167.99 415.519 167.99C409.996 167.99 405.519 172.467 405.519 177.99C405.519 183.513 409.996 187.99 415.519 187.99Z" fill="#E6E6E6" />
@@ -463,7 +649,7 @@ const Home = () => {
                         </div>
                         <div className="service service2">
                             <div className="service-left">
-                                <svg width="363" height="728" className='phone-svg' viewBox="0 0 363 728" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="363" height="728" className='phone-svg appear-left' viewBox="0 0 363 728" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g id="Group 22">
                                         <path id="Vector" d="M362.908 172.947H358.909V63.4019C358.909 46.5867 352.229 30.4602 340.339 18.57C328.449 6.67987 312.323 2.65218e-05 295.507 2.01908e-10H63.4206C55.0945 -2.10113e-05 46.85 1.6399 39.1577 4.82612C31.4654 8.01234 24.4761 12.6825 18.5886 18.5699C12.7012 24.4573 8.03105 31.4466 4.84479 39.1389C1.65853 46.8311 0.0185731 55.0756 0.0185547 63.4017V664.376C0.0185481 672.702 1.65848 680.947 4.84471 688.639C8.03095 696.331 12.7011 703.321 18.5885 709.208C24.4759 715.095 31.4653 719.766 39.1575 722.952C46.8498 726.138 55.0943 727.778 63.4204 727.778H295.507C312.322 727.778 328.449 721.098 340.339 709.208C352.229 697.318 358.909 681.191 358.909 664.376V250.923H362.908V172.947Z" fill="#E6E6E6" />
                                         <path id="Vector_2" d="M298.066 16.495H267.771C269.164 19.9106 269.696 23.6165 269.319 27.286C268.943 30.9556 267.67 34.4763 265.612 37.538C263.555 40.5997 260.776 43.1084 257.52 44.8431C254.265 46.5777 250.633 47.4852 246.944 47.4855H113.984C110.295 47.4852 106.663 46.5777 103.408 44.8431C100.152 43.1084 97.3732 40.5997 95.3156 37.538C93.258 34.4763 91.9849 30.9556 91.6085 27.286C91.2321 23.6164 91.7639 19.9105 93.1571 16.4949H64.8615C52.3041 16.4949 40.261 21.4833 31.3815 30.3627C22.5021 39.2421 17.5137 51.2852 17.5137 63.8426V663.935C17.5137 670.153 18.7384 676.31 21.1178 682.055C23.4972 687.799 26.9849 693.019 31.3815 697.415C35.7781 701.812 40.9977 705.299 46.7422 707.679C52.4867 710.058 58.6436 711.283 64.8615 711.283H298.066C304.284 711.283 310.441 710.058 316.185 707.679C321.93 705.299 327.149 701.812 331.546 697.415C335.942 693.019 339.43 687.799 341.81 682.055C344.189 676.31 345.414 670.153 345.414 663.935V63.8427C345.414 57.6249 344.189 51.4679 341.809 45.7235C339.43 39.979 335.942 34.7594 331.546 30.3627C327.149 25.9661 321.93 22.4785 316.185 20.0991C310.441 17.7196 304.284 16.4949 298.066 16.495Z" fill="white" />
@@ -517,18 +703,18 @@ const Home = () => {
                                 </svg>
 
                             </div>
-                            <div className="service-right service-content">
+                            <div className="service-right service-content appear-right">
                                 <h1 className="service-title">AI <span>Phone</span> Agents</h1>
                                 <p className="section-p">Our AI phone systems can automate business calls by handling routine inquiries, scheduling appointments, and providing information without any human intervention.</p>
                             </div>
                         </div>
                         <div className="service service3">
-                            <div className="service-left service-content">
+                            <div className="service-left service-content appear-left">
                                 <h1 className="service-title">Workflow <span>Automations</span></h1>
                                 <p className="section-p">We build you bespoke AI Chatbots that not only handle over 80% of your customer support, but also a myriad of various tasks e.g saving info to CRM, booking meetings, lead qualification e.t.c all based on your unique business needs</p>
                             </div>
                             <div className="service-right">
-                                <svg width="471" height="635" className='task-svg' viewBox="0 0 471 635" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="471" height="635" className='task-svg appear-right' viewBox="0 0 471 635" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g id="Group 23">
                                         <path id="Vector" d="M437.632 369H179.632C170.883 368.99 162.495 365.51 156.309 359.324C150.122 353.137 146.642 344.749 146.632 336V33C146.642 24.2509 150.122 15.863 156.309 9.67639C162.495 3.48983 170.883 0.00988299 179.632 0H419.659L470.632 40.6289V336C470.622 344.749 467.142 353.137 460.956 359.324C454.769 365.51 446.381 368.99 437.632 369Z" fill="#E6E6E6" />
                                         <path id="Vector_2" d="M179.632 9.5C173.402 9.50702 167.429 11.9852 163.023 16.3907C158.617 20.7963 156.139 26.7696 156.132 33V336C156.139 342.23 158.617 348.204 163.023 352.609C167.429 357.015 173.402 359.493 179.632 359.5H437.632C443.863 359.493 449.836 357.015 454.242 352.609C458.647 348.204 461.125 342.23 461.132 336V45.2056L416.336 9.5H179.632Z" fill="white" />
@@ -580,17 +766,17 @@ const Home = () => {
 
                 <section className="section about-section">
                     <div className="doodles">
-                        <img src={doodle1} alt="" className='doodle1-left doodle' />
-                        <img src={doodle2} alt="" className='doodle2-left doodle' />
-                        <img src={doodle3} alt="" className='doodle3-left doodle' />
-                        <img src={doodle1} alt="" className='doodle1-right doodle' />
-                        <img src={doodle2} alt="" className='doodle2-right doodle' />
-                        <img src={doodle3} alt="" className='doodle3-right doodle' />
+                        <img src={doodle1} alt="" className='doodle1-left doodle' loading='lazy'/>
+                        <img src={doodle2} alt="" className='doodle2-left doodle' loading='lazy'/>
+                        <img src={doodle3} alt="" className='doodle3-left doodle' loading='lazy'/>
+                        <img src={doodle1} alt="" className='doodle1-right doodle' loading='lazy'/>
+                        <img src={doodle2} alt="" className='doodle2-right doodle' loading='lazy'/>
+                        <img src={doodle3} alt="" className='doodle3-right doodle' loading='lazy'/>
                     </div>
 
                     <div className="about-wrapper">
-                        <img src={peeping} className='peeping-img' alt="" />
-                        <div className="about-container">
+                        <img src={peeping} className='peeping-img appear-left' alt="" />
+                        <div className="about-container appear-right">
                             <div className="overlay">
                                 <img src={curvyAbstract} className='curvy-abstract1 curvy-abstract' alt="" draggable={false} />
                                 <img src={curvyAbstract} className='curvy-abstract2 curvy-abstract' alt="" draggable={false} />
@@ -618,7 +804,7 @@ const Home = () => {
 
                 <section className="section contact-section">
 
-                    <div className="contact-left">
+                    <div className="contact-left appear-left">
                         <h1 className="section-title">Contact <span>Us</span></h1>
                         <p className="section-p">Got a burning AI Idea, question, or just want to chat about what we do, feel free to reach out to our friendly team at Begryp, and we’ll get right back to you.</p>
 
@@ -629,16 +815,27 @@ const Home = () => {
                             <h1 className='tech'>TECH</h1>
                         </div>
                     </div>
-                    <div className="contact-right">
-                        <form>
-                            <TextField label="Name" variant="outlined" />
-                            <TextField label="Email" variant="outlined" />
-                            <TextField label="Subject" variant="outlined" />
-                            <TextField label="Message" multiline rows={4} variant="outlined" />
+                    <div className="contact-right appear-right">
+                        <form onSubmit={onBeforeSubmit}>
+                            <TextField label="Name" variant="outlined" onChange={(e) => setName(e.target.value)} value={name} />
+                            <TextField label="Email" variant="outlined" onChange={(e) => setEmail(e.target.value)} value={email} />
+                            <TextField label="Subject" variant="outlined" onChange={(e) => setSubject(e.target.value)} value={subject} />
+                            <TextField label="Message" multiline rows={4} onChange={(e) => setMessage(e.target.value)} variant="outlined" value={message} />
                             <Button type='submit' className='send-btn' variant='contained' color='secondary'>
                                 <span>Send <span className='message-span'>Message</span></span>
-                                <img src={sendIcon} className="send-icon" alt="" />
+                                
+
+                                {loading
+                                ? <img src={loadingGif} className="send-icon" alt="" loading='lazy'/>
+                                : <img src={sendIcon} className="send-icon" alt="" loading='lazy'/>
+                                }
                             </Button>
+
+                            
+
+                            
+
+
                         </form>
                     </div>
                 </section>
@@ -646,14 +843,14 @@ const Home = () => {
                 <section className="section footer-section">
 
                     <div className="overlay">
-                        <img src={curvyAbstract} className='footer-abstract1 footer-abstract' alt="" draggable={false}/>
-                        <img src={curvyAbstract} className='footer-abstract2 footer-abstract' alt="" draggable={false}/>
+                        <img src={curvyAbstract} className='footer-abstract1 footer-abstract' alt="" draggable={false} loading='lazy'/>
+                        <img src={curvyAbstract} className='footer-abstract2 footer-abstract' alt="" draggable={false} loading='lazy'/>
                     </div>
 
                     <div className="footer-left">
-                        <img src={plainLogo} alt="" className='footer-logo' />
+                        <img src={plainLogo} alt="" className='footer-logo appear-left' loading='lazy'/>
                     </div>
-                    <div className="footer-right">
+                    <div className="footer-right appear-right">
                         <div className="email-div">
                             <img src={emailIcon} className='email-icon' alt="" />
                             <span>info@begryp.com</span>
