@@ -19,6 +19,8 @@ import aiMesh from "../images/ai-mesh.svg"
 import { useDispatch } from "react-redux"
 import axios from "axios"
 import loadingGif from "../images/loading.gif"
+import { Helmet } from "react-helmet";
+
 
 
 
@@ -86,23 +88,6 @@ const Home = () => {
 
 
     // USEEFFECTS
-
-
-    // LOAD DISAPPEAR USEEFFECT
-
-    useEffect(() => {
-        const loader = document.querySelector('.loader-wrapper')
-
-        function vanish() {
-            loader.classList.add('disappear')
-        }
-
-
-        window.addEventListener('load', vanish)
-    }, [])
-
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////
 
 
     // TYPEWRITING EFFECT
@@ -451,7 +436,7 @@ const Home = () => {
 
 
 
-        axios.post("http://localhost:8000/api/send_mail", payload, { headers: { 'X-CSRFToken': csrftoken } })
+        axios.post("https://www.begryp.com/api/send_mail", payload, { headers: { 'X-CSRFToken': csrftoken } })
             .then(res => {
 
                 dispatch({
@@ -500,7 +485,7 @@ const Home = () => {
         //     }
         // }
 
-        
+
 
         // // Send Me Mutiso a notification
         // axios.post('https://graph.facebook.com/v17.0/174669262396800/messages', waMsg, headers)
@@ -529,11 +514,17 @@ const Home = () => {
     return (
         <ThemeProvider theme={theme}>
             <div className='home-container' style={{ background: `url(${funkyLines}), repeat`, backgroundSize: "200px" }}>
+                <Helmet>
+                    <title>Begryp</title>
+                    <link rel="icon" type="image/png" sizes="16x16" href={plainLogo} />
+                </Helmet>
+
+
                 <Nav />
 
                 <section className="section hero-section">
 
-                    <img src={begrypGrowthWatermark} alt="" className="hero-watermark" loading='lazy'/>
+                    <img src={begrypGrowthWatermark} alt="" className="hero-watermark" loading='lazy' />
                     <svg width="591" height="517" viewBox="0 0 591 517" className="hero-growth appear-left" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="Group 19">
                             <g id="leaf1">
@@ -602,14 +593,15 @@ const Home = () => {
                         <p className="hero-p section-p appear-down">Unlock the hidden potential within your business with our bespoke AI solutions.</p>
                         <Button onClick={scrollSection} variant='contained' className='cta-btn appear-left' color='secondary'>
                             <span>Book&nbsp;<span className='a-span'>A</span>&nbsp;Call</span>
-                            <img src={callIcon} alt="" className='call-icon' loading='lazy'/>
+                            <img src={callIcon} alt="" className='call-icon' loading='lazy' />
+                            <i></i>
                         </Button>
                     </div>
                 </section>
 
                 <section className="section services-section">
-                    <img src={aiMesh} className='services-watermark1 services-watermark' alt="" loading='lazy'/>
-                    <img src={aiMesh} className='services-watermark2 services-watermark' alt="" loading='lazy'/>
+                    <img src={aiMesh} className='services-watermark1 services-watermark' alt="" loading='lazy' />
+                    <img src={aiMesh} className='services-watermark2 services-watermark' alt="" loading='lazy' />
                     <div className="services-nav">
                         <h1 className="section-title appear-left">Our <span>Services</span></h1>
                         <ul className="services-nav-ul appear-right">
@@ -711,7 +703,7 @@ const Home = () => {
                         <div className="service service3">
                             <div className="service-left service-content appear-left">
                                 <h1 className="service-title">Workflow <span>Automations</span></h1>
-                                <p className="section-p">We build you bespoke AI Chatbots that not only handle over 80% of your customer support, but also a myriad of various tasks e.g saving info to CRM, booking meetings, lead qualification e.t.c all based on your unique business needs</p>
+                                <p className="section-p">We automate various business processes and workflows, resulting in enhanced efficiency, cost reduction and reduction of redundant tasks. This gives your team back more time to focus on higher leverage tasks, that grow the business.</p>
                             </div>
                             <div className="service-right">
                                 <svg width="471" height="635" className='task-svg appear-right' viewBox="0 0 471 635" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -766,12 +758,12 @@ const Home = () => {
 
                 <section className="section about-section">
                     <div className="doodles">
-                        <img src={doodle1} alt="" className='doodle1-left doodle' loading='lazy'/>
-                        <img src={doodle2} alt="" className='doodle2-left doodle' loading='lazy'/>
-                        <img src={doodle3} alt="" className='doodle3-left doodle' loading='lazy'/>
-                        <img src={doodle1} alt="" className='doodle1-right doodle' loading='lazy'/>
-                        <img src={doodle2} alt="" className='doodle2-right doodle' loading='lazy'/>
-                        <img src={doodle3} alt="" className='doodle3-right doodle' loading='lazy'/>
+                        <img src={doodle1} alt="" className='doodle1-left doodle' loading='lazy' />
+                        <img src={doodle2} alt="" className='doodle2-left doodle' loading='lazy' />
+                        <img src={doodle3} alt="" className='doodle3-left doodle' loading='lazy' />
+                        <img src={doodle1} alt="" className='doodle1-right doodle' loading='lazy' />
+                        <img src={doodle2} alt="" className='doodle2-right doodle' loading='lazy' />
+                        <img src={doodle3} alt="" className='doodle3-right doodle' loading='lazy' />
                     </div>
 
                     <div className="about-wrapper">
@@ -788,6 +780,7 @@ const Home = () => {
                                 <Button onClick={scrollSection} variant='contained' className='cta-btn appear-left' color='secondary'>
                                     <span>Book&nbsp;<span className='a-span'>A</span>&nbsp;Call</span>
                                     <img src={callIcon} alt="" className='call-icon' />
+                                    <i></i>
                                 </Button>
                             </div>
                         </div>
@@ -823,17 +816,17 @@ const Home = () => {
                             <TextField label="Message" multiline rows={4} onChange={(e) => setMessage(e.target.value)} variant="outlined" value={message} />
                             <Button type='submit' className='send-btn' variant='contained' color='secondary'>
                                 <span>Send <span className='message-span'>Message</span></span>
-                                
+
 
                                 {loading
-                                ? <img src={loadingGif} className="send-icon" alt="" loading='lazy'/>
-                                : <img src={sendIcon} className="send-icon" alt="" loading='lazy'/>
+                                    ? <img src={loadingGif} className="send-icon" alt="" loading='lazy' />
+                                    : <img src={sendIcon} className="send-icon" alt="" loading='lazy' />
                                 }
                             </Button>
 
-                            
 
-                            
+
+
 
 
                         </form>
@@ -843,12 +836,12 @@ const Home = () => {
                 <section className="section footer-section">
 
                     <div className="overlay">
-                        <img src={curvyAbstract} className='footer-abstract1 footer-abstract' alt="" draggable={false} loading='lazy'/>
-                        <img src={curvyAbstract} className='footer-abstract2 footer-abstract' alt="" draggable={false} loading='lazy'/>
+                        <img src={curvyAbstract} className='footer-abstract1 footer-abstract' alt="" draggable={false} loading='lazy' />
+                        <img src={curvyAbstract} className='footer-abstract2 footer-abstract' alt="" draggable={false} loading='lazy' />
                     </div>
 
                     <div className="footer-left">
-                        <img src={plainLogo} alt="" className='footer-logo appear-left' loading='lazy'/>
+                        <img src={plainLogo} alt="" className='footer-logo appear-down' loading='lazy' />
                     </div>
                     <div className="footer-right appear-right">
                         <div className="email-div">

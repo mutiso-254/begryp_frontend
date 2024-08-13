@@ -9,6 +9,9 @@ import { legacy_createStore as createStore, applyMiddleware } from 'redux'
 import rootReducer from "./reducers"
 import { Provider } from "react-redux"
 import {thunk} from "redux-thunk"
+import ReactGA from "react-ga4";
+
+ReactGA.initialize("G-8VR07K2HK6");
 
 
 let store = createStore(
